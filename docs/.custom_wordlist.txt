@@ -149,6 +149,7 @@ Cason
 casper
 Cayla
 cca
+ccache
 ccwgroup
 cephadm
 cephadmlib
@@ -371,6 +372,7 @@ GitHub
 github
 gjs
 GLArea
+GLib
 glibc
 gluster
 glusterfs
@@ -434,6 +436,7 @@ ibus
 IBus
 ica
 Icelake
+IDEs
 idmapped
 igc
 Ilya
@@ -450,6 +453,7 @@ initramfs
 initrd
 initrdless
 inlining
+intrinsics
 inode
 intel
 intelrdt
@@ -599,6 +603,7 @@ Lubuntu
 Luca
 Lunarlake
 LUNs
+MACs
 machinectl
 makedumpfile
 Makefile
@@ -628,6 +633,7 @@ microvm
 middleware
 Mii
 mips
+miscompilation
 misconfiguration
 mitigations
 Miyoko

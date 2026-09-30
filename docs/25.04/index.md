@@ -36,7 +36,7 @@ Ubuntu 25.04 will be supported for 9 months until January 2026. If you need long
 
 ## Upgrades
 
-* Upgrades to to Ubuntu 25.04 will refresh seeded snaps to the appropriate snap channels, regardless of what was being tracked before. Snaps that are newly-seeded will be installed during the upgrade. In particular, the following snaps will be installed or refreshed on upgrade: 
+* Upgrades to to Ubuntu 25.04 will refresh seeded snaps to the appropriate snap channels, regardless of what was being tracked before. Snaps that are newly-seeded will be installed during the upgrade. In particular, the following snaps will be installed or refreshed on upgrade:
 
   Early upgrades may wish to perform these updates manually.
 
@@ -94,7 +94,7 @@ Additionally, GraalVM Community Edition for JDK versions 21, 24 and 25ea is now 
 
 #### .NET
 
-.NET versions 8 and 9 continue to be supported. 
+.NET versions 8 and 9 continue to be supported.
 
 The [dotnet](https://snapcraft.io/dotnet) snap is updated to include .NET version 9. The [powershell-preview](https://snapcraft.io/powershell-preview) snap has been updated to build from source.
 
@@ -191,13 +191,13 @@ Dynamic Boost will be active only when the laptop is powered by AC and there is 
 
 For more details refer to [NVIDIA's documentation](https://download.nvidia.com/XFree86/Linux-x86_64/570.133.07/README/dynamicboost.html).
 
-#### Support for new Intel® integrated and discrete GPUS 
-This release brings full support for Intel® Core™ Ultra Xe2 integrated Intel® Arc™ graphics, and Intel® Arc™ B580 and B570 “Battlemage” discrete GPUs. 
+#### Support for new Intel® integrated and discrete GPUS
+This release brings full support for Intel® Core™ Ultra Xe2 integrated Intel® Arc™ graphics, and Intel® Arc™ B580 and B570 “Battlemage” discrete GPUs.
 Moreover, the following features are also included:
- * Improved GPU and CPU ray tracing rendering performance in applications with Intel Embree support, such as Blender (v4.2+). Ray tracing hardware acceleration on the GPU improves frame rendering by 20-30%, due to a 2-4x speed-up for the ray tracing component. 
+ * Improved GPU and CPU ray tracing rendering performance in applications with Intel Embree support, such as Blender (v4.2+). Ray tracing hardware acceleration on the GPU improves frame rendering by 20-30%, due to a 2-4x speed-up for the ray tracing component.
  * Full hardware accelerated video encoding of AVC, JPEG, HEVC, and AV1 on “Battlemage” devices.
  * Introduction of the new CCS optimization in Intel® Compute Runtime.
- * Enable debugging support for Intel Xe GPUs. 
+ * Enable debugging support for Intel Xe GPUs.
  * oneAPI Level Zero Ray Tracing improves AI/ML workload speeds via Embree on SYCL
 
 ### Ubuntu Foundations
@@ -210,7 +210,7 @@ OpenSSL has been updated to [3.4.1](https://github.com/openssl/openssl/blob/open
 
 #### Package Management: APT 3.0
 
-APT has been updated to 3.0. 
+APT has been updated to 3.0.
 
 The new dependency solver is now automatically used if the classic solver cannot find a solution to either find a solution or add more context to the failure, and in other cases to [evaluate its performance](https://discourse.ubuntu.com/t/evaluating-the-new-apt-solver-in-25-04/55618).
 
@@ -244,7 +244,7 @@ ClamAV was updated from 1.3 in Ubuntu 24.10, to version 1.4.2 in 25.04.
 This brings a number of fixes, along with the following noteworthy
 changes from the Clamav 1.4.0 feature release:
 
-* Added support for extracting ALZ archives. The new ClamAV file type for ALZ archives is CL_TYPE_ALZ. Added a DCONF (Dynamic CONFiguration) option to enable or disable ALZ archive support, via ClamAV .cfg "signatures".
+* Added support for extracting ALZ archives. The new ClamAV file type for ALZ archives is CL_TYPE_ALZ. Added a DCONF (Dynamic Configuration) option to enable or disable ALZ archive support, via ClamAV .cfg "signatures".
 * Added support for extracting LHA/LZH archives. The new ClamAV file type for LHA/LZH archives is CL_TYPE_LHA_LZH. Added a DCONF option to enable or disable LHA/LZH archive support.
 * Added the ability to disable image fuzzy hashing, if needed. For context, image fuzzy hashing is a detection mechanism useful for identifying malware by matching images included with the malware or phishing email/document.
 * Added a DCONF option to enable or disable image fuzzy hashing support.
@@ -308,7 +308,7 @@ For further details on such changes, please refer to [the upstream release notes
 
 runc (src:runc-app) was updated to upstream version 1.2.5. This new version includes several fixes and changes including
 
-* When using cgroups v2, allow to set or update memory limit to "unlimited" and swap limit to a specific value. 
+* When using cgroups v2, allow to set or update memory limit to "unlimited" and swap limit to a specific value.
 * Mount options on bind-mounts that clear a mount flag are now always applied. Previously, if a user requested a bind-mount with only clearing options (such as `rw,exec,dev`) the options would be ignored and the original bind-mount options would be set.
 * Container configurations using bind-mounts with superblock mount flags (i.e. filesystem-specific mount flags, referred to as "data" in `mount(2)`, as opposed to VFS generic mount flags like `MS_NODEV`) will now return an error.
 * Fix CVE-2024-45310, a low-severity attack that allowed maliciously configured containers to create empty files and directories on the host.
@@ -511,7 +511,7 @@ The [QEMU ](https://qemu.org/) package was updated to version 9.2.0. Here are th
         `FEAT_CMOW`
   * The `max` CPU and any new CPU types will default to a 1GHz generic timer frequency rather than the old 62.5MHz (this is architecturally required from ARMv8.6 onwards).
   * KVM-based VMs can now support MTE (if the host CPU has MTE support).
-  * 
+  *
 
 * RISC-V
     * Support RISC-V privilege 1.13 spec.
@@ -720,7 +720,7 @@ If you notice any unexpected changes or bugs in the minimal images, create a new
 * In addition to arm64 server ISO there is now also an official generic arm64 desktop ISO targeting VMs, ACPI + EFI platforms and Snapdragon based WoA devices.
 * Initial hardware enablement work for the Snapdragon X Elite platform is included in the desktop ISO
 
-#### IBM Z and LinuxONE (s390x) ![image|32x32](upload://dZM0RRlelqCcZc6RhqJGMW8DMZr.png) 
+#### IBM Z and LinuxONE (s390x) ![image|32x32](upload://dZM0RRlelqCcZc6RhqJGMW8DMZr.png)
 
 The key package, 's390-tools', was step-by-step upgraded to latest version v2.37.0 ([LP: #2096789](https://launchpad.net/bugs/2096789), via [LP: #2091549](https://launchpad.net/bugs/2091549)), that covers the removal of scsi_logging_level, since it's now in sg3_utils ([LP: #2098500](https://launchpad.net/bugs/2098500)), the new pvimg and with that the rewritten genprotimg tool in Rust ([LP: #2098046](https://launchpad.net/bugs/2098046)), with it's new info command ([LP: #2098047](https://launchpad.net/bugs/2098047)), to display of encrypted & unencrypted Secure Execution (SE) image information, validations in genprotimg, if an SE image can run on particular host ([LP: #2097576](https://launchpad.net/bugs/2097576)), supporting unencrypted SE images by exposing the resp. SE header flag ([LP: #2098045](https://launchpad.net/bugs/2098045)), supporting extended attestation for SE ([LP: #2097535](https://launchpad.net/bugs/2097535)) and support for retrievable secrets in SE guests ([LP: #2097533](https://launchpad.net/bugs/2097533) and kernel [LP: #2097534](https://launchpad.net/bugs/2097534)).
 
@@ -914,7 +914,7 @@ There is a AppArmor related bug where containers cannot be promptly stopped due 
 
 * The default audio output on the Raspberry Pi 4 is "Analogue Output - Built-in Audio" instead of "HDMI/Displayport", so you might be confused after the first boot when you hear no sound even after moving the volume slider. You can change the audio output to HDMI in the settings, which persists in subsequent boots. ([LP: #1993347](https://bugs.launchpad.net/ubuntu/+source/pipewire/+bug/1993347))
 
-#### Google Compute Platform 
+#### Google Compute Platform
 
 Nothing yet.
 

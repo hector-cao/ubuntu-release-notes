@@ -96,6 +96,41 @@ used by monitoring software to query and manage network devices and hosts.
     than TLS 1.0.
   - `HOST-RESOURCES-MIB`: added support for RPM SQLite DB background.
 
+#### rdma-core
+
+`rdma-core` provides the userspace components for the Linux RDMA
+(Remote Direct Memory Access) subsystem used to 0configure and use
+InfiniBand/RoCE/iWARP networking and storage (NVMe-oF, SRP, etc.) devices.
+
+- **mlx5 provider**
+  - Added DMA-buf heap and Confidential-Computing (CoCo) shared-memory
+    allocation support, including a new internal DMA-buf heap allocator
+    library in `libibverbs` and per-buffer dmabuf UMEM attribute
+    passthrough to the kernel.
+  - Introduced `mlx5dv_devx_uar_export_dmabuf_fd()` and DM export DMABUF
+    fd support.
+  - Enabled ST64B for BlueFlame writes (with aarch64 `mmio_memcpy_x64`
+    support).
+- **bnxt_re provider**: added support for QP rate limiting
+  (`ibv_modify_qp_rate_limit`) and reporting of rate-limit capabilities.
+- **efa provider**: added a new completion status for feature mismatch;
+  added QP generation to the device request ID; removed unused `cur_qp`
+  caching in `efa_poll_sub_cq`.
+- **mana provider**: added Unreliable-Connection (UC) QP support, robust
+  `udata` handling, and fixed lost CQ notifications when re-arming
+  without polling (the cqid-check fix that Ubuntu had carried as a local
+  patch in 61.0-2ubuntu3 is included upstream as of 63.0-1).
+- **ionic provider**: fixed `sq_sig_all` handling for signaled
+  completions.
+- **pyverbs**: numerous enhancements — WR property getters, ParentDomain
+  CC unprotected allocation, CoCo DMA bounce device capability flag,
+  `ibv_buf` provider-aware buffer support, fixed a `MREx.close()`
+  deallocation crash, replaced unsafe `WeakSet.pop()` usage, and other
+  cleanup/robustness fixes.
+- **rc_pingpong**: added unprotected memory allocation for CoCo guests,
+  buffer-allocation ordering fix, and preference for IPv6 wildcard when
+  binding the control channel.
+
 
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).

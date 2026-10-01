@@ -84,6 +84,15 @@ Please refer to the respective release notes for more information:
  * [FRRouting 10.7.0 release notes](https://frrouting.org/release/10.7.0/) and [FRRouting 10.7.1 release notes](https://frrouting.org/release/10.7.1/)
  * [FRRouting 10.6.0 release notes](https://frrouting.org/release/10.6.0/) and [FRRouting 10.6.1 release notes](https://frrouting.org/release/10.6.1/)
 
+#### libp11
+The libp11 package was updated to version 0.4.20. Highlights include:
+ * Post-quantum cryptography support (ML-DSA, SLH-DSA, and FALCON key generation, signing, and verification).
+ * OpenSSL 4.x support and a more complete PKCS#11 provider.
+ * Memory-safety and concurrency fixes.
+ * And many other improvements and bug fixes.
+
+Please refer to the [libp11 release notes](https://github.com/OpenSC/libp11/releases) for more details.
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 

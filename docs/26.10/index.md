@@ -86,6 +86,13 @@ On top of that, the Ubuntu packaging of [openssh-gssapi](https://launchpad.net/u
 
 The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https://ubuntu.com/server/docs/how-to/software/upgrade-your-release/)) will check the system being upgraded for indications that GSSAPI/Kerberos is being used with openssh, and automatically select `openssh-server-gssapi` and/or `openssh-client-gssapi` for installation, if appropriate. Fresh installs of Ubuntu 26.10, however, will default to the non-GSSAPI/Kerberos versions of the OpenSSH server and client binaries.
 
+#### postfix
+Postfix in Ubuntu Server 26.10 has been updated to version 3.11.7. Important changes include:
+ * BerkeleyDB support has been deprecated. This affects the `hash:` and `btree:` map types. These types are still available, but their use will issue a deprecation warning. Such maps should be migrated to other formats. Please see [Postfix Non-Berkeley-DB migration](https://www.postfix.org/NON_BERKELEYDB_README.html) for more information.
+ * Several tools now support JSON output: `postconf`, `postalias`, `postmap`, and `postmulti`.
+
+Please see the [Postfix 3.11.0 announcement](https://www.postfix.org/announcements/postfix-3.11.0.html) for the full list of changes.
+
 ### OpenStack
 ### Platforms
 

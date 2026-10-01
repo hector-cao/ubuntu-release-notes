@@ -69,6 +69,17 @@ The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https
 
 ### OpenStack
 ### Platforms
+
+#### RISC-V
+
+Ubuntu 26.10 introduces official support for multiple RVA23 RISC-V platforms:
+- The SpacemiT K3 boards (Pico-ITX, CoM260 kit)
+- The SiFive BigSky platform
+
+Documentation on how to install on the SpacemiT K3 boards is available: https://ubuntu.com/hardware/docs/boards/how-to/ubuntu_supported/spacemit-k3/
+
+Ubuntu Desktop and Xubuntu Minimal RISC-V desktop images are provided with support for the SpacemiT K3 and QEMU.
+
 ## Known Issues
 ### General
 ### Linux kernel

@@ -62,6 +62,9 @@ maintainable and memory-safe foundation.
 
 ### Ubuntu Server
 
+#### cyrus-sasl2
+Since Ubuntu 26.04 LTS, the binary libsasl2-modules-sql package no longer supports the PostgreSQL database on the i386 architecture ONLY. This package in all the other supported architectures in Ubuntu continues to support PostgreSQL. See bug [LP: #2142320](https://bugs.launchpad.net/ubuntu/+source/cyrus-sasl2/+bug/2142320) for more details.
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 

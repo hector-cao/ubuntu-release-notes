@@ -157,7 +157,7 @@ Ubuntu Desktop 25.10 now uses Dracut as its default initial ramdisk infrastructu
 * [LibreOffice 25.8](https://wiki.documentfoundation.org/ReleaseNotes/25.8) 📚
 * [OpenVINO™ Toolkit 2025.2.0](https://github.com/openvinotoolkit/openvino/releases/tag/2025.2.0) 🤖 includes [openvino.genai](https://github.com/openvinotoolkit/openvino.genai) for the first time. 
 Also related to that:
-  * [Audacity 3.7.1](https://support.audacityteam.org/additional-resources/changelog/audacity-3.7) 🎧 comes with OpenVINO™ AI plugins for music separation, noise suppression, music generation and continuation, transcription, and super resolution, and can be run on Intel CPU, GPU, and NPU.
+  * [Audacity 3.7.1](https://github.com/audacity/audacity/releases/tag/Audacity-3.7.1) 🎧 comes with OpenVINO™ AI plugins for music separation, noise suppression, music generation and continuation, transcription, and super resolution, and can be run on Intel CPU, GPU, and NPU.
   * [GIMP 3.0.4](https://www.gimp.org/news/2025/05/18/gimp-3-0-4-released/) 🖼️ which supports the usage of the [snap](https://snapcraft.io/openvino-ai-plugins-gimp) to add AI functionality to GIMP for stable diffusion, super resolution, and semantic segmentation via [OpenVINO™ AI plugins for GIMP 3.1.2](https://github.com/intel/openvino-ai-plugins-gimp/releases/tag/3.1.2).
 
 #### Updated Subsystems

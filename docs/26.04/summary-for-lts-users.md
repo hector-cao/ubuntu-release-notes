@@ -736,7 +736,7 @@ Support for the PowerShell snap has been expanded to include the `arm64`, `s390x
 - A generic OpenID Connect (OIDC) broker for authd is available. For more information [read the blog](https://ubuntu.com/blog/more-identity-providers-ubuntu-generic-broker)
 - Device ownership support lets you automatically assign a device owner and restrict login access
 - A new setting allows you to enforce an access check with the identity provider during login
-- New pages on [security](https://documentation.ubuntu.com/authd/stable-docs/explanation/security/), [deployment](https://documentation.ubuntu.com/authd/stable-docs/reference/#deployment), and [authctl](https://documentation.ubuntu.com/authd/stable-docs/reference/cli/) were added to the [docs](https://documentation.ubuntu.com/authd/en/stable-docs/)
+- New pages on [security](https://documentation.ubuntu.com/authd/stable-docs/explanation/security/), [deployment](https://documentation.ubuntu.com/authd/stable-docs/reference/#deployment), and [authctl](https://documentation.ubuntu.com/authd/stable-docs/reference/cli/) were added to the [docs](https://documentation.ubuntu.com/authd/stable-docs/)
 
 ### ADSys
 

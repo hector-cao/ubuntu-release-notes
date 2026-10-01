@@ -44,6 +44,22 @@ The default core utilities now run entirely on the Rust-based `uutils`
 implementation. The remaining GNU utilities (`cp`, `mv`, and `rm`), previously
 retained due to compatibility issues, have now been migrated.
 
+#### An oxidized OpenPGP
+
+Ubuntu 26.10 adopts the Rust-based Sequoia PGP into the main archive,
+providing an officially supported, modern, and memory-safe OpenPGP
+implementation.
+
+The goal is for Sequoia PGP to become Ubuntu's default OpenPGP toolchain, with
+`sq` and `sqv` serving as counterparts to the traditional `gpg` and `gpgv`
+utilities, respectively. By adopting Sequoia, Ubuntu can maintain OpenPGP
+interoperability while moving its core implementation toward a more
+maintainable and memory-safe foundation.
+
+:::{note}
+`gpg` and `gpgv` are still available in the main repository as of Ubuntu 26.10.
+:::
+
 ### Ubuntu Server
 
 #### openssh

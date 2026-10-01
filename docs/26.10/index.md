@@ -62,6 +62,35 @@ maintainable and memory-safe foundation.
 
 ### Ubuntu Server
 
+#### apache2
+
+[apache2](https://launchpad.net/ubuntu/+source/apache2) was updated from 2.4.66 to upstream version 2.4.68. While this is mostly a security-driven update, the 2.4.67 and 2.4.68 releases together fix around 25 CVEs, affecting `mod_http2`, `mod_proxy_ajp`, `mod_proxy_ftp`, `mod_proxy_html`, `mod_ssl`, `mod_ldap`, `mod_dav_fs`, `mod_dav_lock`, `mod_md`, `mod_xml2enc`, `mod_authn_socache`, `mod_auth_digest`, `mod_rewrite` and the server core.
+
+Besides the security fixes, the package was rebuilt against OpenSSL 4 and Lua 5.5. `mod_ssl` and `ab` now support OpenSSL 4.
+
+The complete list of changes is available in the [upstream changelog](https://downloads.apache.org/httpd/CHANGES_2.4).
+
+#### haproxy
+
+[haproxy](https://launchpad.net/ubuntu/+source/haproxy) jumped two feature releases, from 3.2 to upstream version 3.4.2. HAProxy 3.4 is an LTS branch, supported upstream until 2031-Q2.
+
+Some defaults were changed, and some functionality is deprecated:
+
+* The default load balancing algorithm changed from `roundrobin` to `random` (power of two choices).
+* `cpu-policy` now defaults to `performance`, and the number of threads is no longer capped at 64.
+* Backends in `mode http` now enable `option abortonclose` by default.
+* The `program` section was removed, and the `master-worker` global directive, `dispatch` and `option transparent` were deprecated.
+* Duplicate `frontend`, `backend`, `listen`, `defaults` and `log-forward` section names, as well as duplicate server names inside a backend, are now rejected as errors instead of warnings.
+* `http-send-name-header` can no longer target the `connection`, `content-length`, `host` or `transfer-encoding` headers, and multiple `-m` match types in a single ACL are no longer accepted.
+
+See the [HAProxy 3.3](https://www.haproxy.com/blog/announcing-haproxy-3-3) and [HAProxy 3.4](https://www.haproxy.com/blog/announcing-haproxy-3-4) announcements for the complete list of changes.
+
+#### libp11
+
+[libp11](https://launchpad.net/ubuntu/+source/libp11) was updated from 0.4.18 to upstream version 0.4.20. See the [0.4.19](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.19) and [0.4.20](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.20) upstream release notes for details.
+
+Since Ubuntu now ships OpenSSL 4, which no longer supports engines, the `libengine-pkcs11-openssl` package only ships the PKCS#11 provider (installed under `ossl-modules/`) and no longer ships the OpenSSL ENGINE (see [LP: #2155023](https://bugs.launchpad.net/ubuntu/+source/libp11/+bug/2155023)). Configurations still referencing the `pkcs11` engine need to be migrated to the provider.
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 
@@ -82,6 +111,38 @@ This split was done to reduce the security exposure of the OpenSSH server and cl
 On top of that, the Ubuntu packaging of [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi) also includes the ccache patch (see [LP: #1889548](https://bugs.launchpad.net/ubuntu/+source/openssh-gssapi/+bug/1889548). This allows for forwarded credentials to be stored according to the `default_ccache_name` setting in `/etc/krb5.conf` on the target host, instead of forcing a randomly named file in `/tmp`.
 
 The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https://ubuntu.com/server/docs/how-to/software/upgrade-your-release/)) will check the system being upgraded for indications that GSSAPI/Kerberos is being used with openssh, and automatically select `openssh-server-gssapi` and/or `openssh-client-gssapi` for installation, if appropriate. Fresh installs of Ubuntu 26.10, however, will default to the non-GSSAPI/Kerberos versions of the OpenSSH server and client binaries.
+
+#### php8.5
+
+[php8.5](https://launchpad.net/ubuntu/+source/php8.5) was updated from 8.5.4 to upstream version 8.5.9. These are bugfix and security point releases, with no new language features. Among the fixed issues are a heap corruption in `openssl_encrypt()` with AES-WRAP-PAD, an out-of-bounds write in `bccomp()`, an SQL injection through `E'...'` escape sequences, and two vulnerabilities in the bundled `uriparser` library.
+
+Two packaging changes are worth noting:
+
+* The `php-fpm` systemd unit was aligned with the hardening options provided upstream, and `PrivateTmp=true` was removed from it.
+* The obsolete PID file is no longer created, and `php-fpm-reopenlogs` no longer depends on it.
+* The package was rebuilt against OpenSSL 4.
+
+See the [upstream changelog](https://www.php.net/ChangeLog-8.php#PHP_8_5) for the full list of changes.
+
+#### squid
+
+[squid](https://launchpad.net/ubuntu/+source/squid) was updated from 7.2 to upstream version 7.7. There are no new features in this range, but there is a long list of security and robustness fixes, which makes upgrading advisable:
+
+* Nine upstream security advisories were addressed, covering ICP packet and URI validation, an out-of-bounds read while generating FTP directory listings, a heap overflow in cache digest handling, and base64 encoding buffer protection.
+* Squid no longer creates world-readable directories, and the ICMP helper and the LDAPS authentication helpers were hardened.
+* FTP handling is stricter: excessively large control replies are rejected, `reply_header_max_size` is honoured for control responses, and commands containing CR or LF characters are refused.
+* `Transfer-Encoding: identity` is now prohibited in HTTP/1.1 messages, as required by the specification. Clients or servers still using it will be rejected.
+
+The details for each release are available in the [upstream release notes](https://github.com/squid-cache/squid/releases).
+
+On the packaging side, squid now builds against OpenSSL 4.
+
+#### sssd
+
+[sssd](https://launchpad.net/ubuntu/+source/sssd) received some fixes in version 0.12.0:
+
+* Two security issues were fixed: a denial of service in the PAM responder caused by missing validation of the authentication token length, and a use-after-free crash in `sssd_pam` while processing `p11_child` results with slow smartcards (see [LP: #2162577](https://bugs.launchpad.net/ubuntu/+source/sssd/+bug/2162577)).
+* SSSD was made compatible with OpenSSL 4 and with GDM 51.
 
 ### OpenStack
 ### Platforms

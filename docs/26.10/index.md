@@ -69,6 +69,7 @@ maintainable and memory-safe foundation.
 #### Support for new RISC-V platforms
 
 Ubuntu 26.10 introduces official support for multiple RVA23 RISC-V platforms:
+
 - The SpacemiT K3 boards (Pico-ITX, CoM260 kit)
 - The SiFive BigSky platform
 

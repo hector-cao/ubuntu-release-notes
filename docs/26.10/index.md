@@ -77,6 +77,26 @@ private keys.
  * Allowed separate key/cert file paths even outside the `generate-default-snakeoil` mode.
  * Added the ability to override the certificate's CN and SubjectAltName from the command line.
 
+#### net-snmp
+
+`net-snmp` provides the suite of applications used to implement the Simple
+Network Management Protocol (SNMP v1, v2c, v3), including `snmpd` (the
+agent/daemon), `snmptrapd` (trap receiver), command-line query tools
+(`snmpget`, `snmpwalk`, etc.), and the development libraries (`libsnmp-dev`)
+used by monitoring software to query and manage network devices and hosts.
+
+- **snmplib**
+  - Added support for `IPV6_RECVPKTINFO`.
+  - Ported the SSH domain transport to FreeBSD.
+- **MIBs**
+  - `EtherLike-MIB`: optimized the Linux implementation to use netlink
+    statistics.
+  - `LM-SENSORS-MIB`: added support for negative temperatures.
+  - `SNMP-TLS-TM-MIB`: updated to RFC 9456 and allowed TLS protocols higher
+    than TLS 1.0.
+  - `HOST-RESOURCES-MIB`: added support for RPM SQLite DB background.
+
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 

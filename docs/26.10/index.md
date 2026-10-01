@@ -67,6 +67,7 @@ Since Ubuntu 26.04 LTS, the binary libsasl2-modules-sql package no longer suppor
 
 #### freeradius
 The FreeRADIUS software was updated to version 3.2.10. Highlights include:
+
  * Initial implementation of Protocol-Failure as per IETF draft
  * Suppress secrets by default in new installations (`supress_secrets=true`)
  * Many other improvements and bug fixes.
@@ -74,6 +75,7 @@ The FreeRADIUS software was updated to version 3.2.10. Highlights include:
 Please refer to the [FreeRADIUS release notes](https://www.freeradius.org/release_notes/) for more details.
 
 #### frr
+
 The FRRouting (frr) software was updated to version 10.7.1. Highlights include:
  * BFD authentication with keychain support (10.7.0)
  * BGP IPv6 VTEP support for EVPN (10.6.0)
@@ -81,11 +83,13 @@ The FRRouting (frr) software was updated to version 10.7.1. Highlights include:
  * And many more improvements and bug fixes.
 
 Please refer to the respective release notes for more information:
+
  * [FRRouting 10.7.0 release notes](https://frrouting.org/release/10.7.0/) and [FRRouting 10.7.1 release notes](https://frrouting.org/release/10.7.1/)
  * [FRRouting 10.6.0 release notes](https://frrouting.org/release/10.6.0/) and [FRRouting 10.6.1 release notes](https://frrouting.org/release/10.6.1/)
 
 #### libp11
 The libp11 package was updated to version 0.4.20. Highlights include:
+
  * Post-quantum cryptography support (ML-DSA, SLH-DSA, and FALCON key generation, signing, and verification).
  * OpenSSL 4.x support and a more complete PKCS#11 provider.
  * Memory-safety and concurrency fixes.
@@ -102,6 +106,7 @@ OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh
  * `openssh-gssapi-client` - the client-side OpenSSH with GSSAPI
 
 Whereas [openssh](https://launchpad.net/ubuntu/+source/openssh) produces:
+
  * `openssh-server` - the server-side OpenSSH daemon without GSSAPI/Kerberos support.
  * `openssh-client` - the client-side OpenSSH without GSSAPI/Kerberos support.
  * and all the other regular openssh binary packages.

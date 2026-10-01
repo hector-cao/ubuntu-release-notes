@@ -62,6 +62,21 @@ maintainable and memory-safe foundation.
 
 ### Ubuntu Server
 
+#### ssl-cert
+
+`ssl-cert` is a simple wrapper around OpenSSL. It provides the
+`make-ssl-cert` helper script and generates the "snakeoil" self-signed
+TLS certificate/key pair (`/etc/ssl/certs/ssl-cert-snakeoil.pem` and
+`/etc/ssl/private/ssl-cert-snakeoil.key`) used by services that need a
+default certificate out of the box (e.g. Apache, Postfix, Dovecot). It
+also manages the `ssl-cert` system group that grants read access to
+private keys.
+
+ * Increased the default generated key length from 2048 to 3072 bits, while leaving existing
+   2048-bit keys untouched.
+ * Allowed separate key/cert file paths even outside the `generate-default-snakeoil` mode.
+ * Added the ability to override the certificate's CN and SubjectAltName from the command line.
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 

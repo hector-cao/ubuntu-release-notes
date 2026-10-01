@@ -148,7 +148,7 @@ html_extra_path = []
 # - https://git.launchpad.net/example
 #
 html_theme_options = {
-    'source_edit_link': 'https://github.com/ubuntu/ubuntu-release-notes',
+    "source_edit_link": "https://github.com/ubuntu/ubuntu-release-notes",
 }
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
@@ -241,6 +241,8 @@ linkcheck_ignore = [
     r"https://www\.freedesktop\.org/.*",
     r"https://gstreamer\.freedesktop\.org/.*",
     r"https://linux-nfs\.org/wiki/.*",
+    # Flaky host (intermittent connection aborts from CI)
+    r"https://www\.xfce\.org/.*",
     # Launchpad: bugs/commits may be private or deleted
     r"https://bugs\.launchpad\.net/.*",
     r"https://git\.launchpad\.net/.*",

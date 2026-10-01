@@ -93,6 +93,19 @@ Postfix in Ubuntu Server 26.10 has been updated to version 3.11.7. Important cha
 
 Please see the [Postfix 3.11.0 announcement](https://www.postfix.org/announcements/postfix-3.11.0.html) for the full list of changes.
 
+#### samba
+Samba in Ubuntu Server 26.10 has been updated to version 4.24.7. Improtant changes include:
+
+ * New audit logging classes for some Active Directory attributes.
+ * `vfs_streams_xattr` can hold larger streams.
+ * Support for remote password management for Entra ID SSPR and Keycloak.
+ * Kerberos PKINIT KeyTrust logon support.
+ * Support for Windows Strong and Flexible key mappings as outlined in KB5014754: Certificate-based authentication changes on Windows domain controllers.
+ * Domain encryption types changed to AES by default.
+ * And many other improvements and bug fixes.
+
+Please see the [Samba 4.24.0 release notes](https://www.samba.org/samba/history/samba-4.24.0.html) for the full list of changes.
+
 ### OpenStack
 ### Platforms
 

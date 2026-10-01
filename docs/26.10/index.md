@@ -62,6 +62,10 @@ maintainable and memory-safe foundation.
 
 ### Ubuntu Server
 
+#### OpenLDAP
+
+Updated from 2.6.10 to 2.6.13, which contains various bugfixes. See the [2.6 series upstream release notes](https://git.openldap.org/openldap/openldap/-/blob/OPENLDAP_REL_ENG_2_6/CHANGES)
+
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 
@@ -82,6 +86,8 @@ This split was done to reduce the security exposure of the OpenSSH server and cl
 On top of that, the Ubuntu packaging of [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi) also includes the ccache patch (see [LP: #1889548](https://bugs.launchpad.net/ubuntu/+source/openssh-gssapi/+bug/1889548). This allows for forwarded credentials to be stored according to the `default_ccache_name` setting in `/etc/krb5.conf` on the target host, instead of forcing a randomly named file in `/tmp`.
 
 The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https://ubuntu.com/server/docs/how-to/software/upgrade-your-release/)) will check the system being upgraded for indications that GSSAPI/Kerberos is being used with openssh, and automatically select `openssh-server-gssapi` and/or `openssh-client-gssapi` for installation, if appropriate. Fresh installs of Ubuntu 26.10, however, will default to the non-GSSAPI/Kerberos versions of the OpenSSH server and client binaries.
+
+Both `openssh` and `openssh-gssapi` are now on version 10.5, containing various bug fixes and security fixes. See the [upstream release notes](https://www.openssh.org/releasenotes.html).
 
 ### OpenStack
 ### Platforms

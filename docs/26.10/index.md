@@ -65,6 +65,14 @@ maintainable and memory-safe foundation.
 #### cyrus-sasl2
 Since Ubuntu 26.04 LTS, the binary libsasl2-modules-sql package no longer supports the PostgreSQL database on the i386 architecture ONLY. This package in all the other supported architectures in Ubuntu continues to support PostgreSQL. See bug [LP: #2142320](https://bugs.launchpad.net/ubuntu/+source/cyrus-sasl2/+bug/2142320) for more details.
 
+#### freeradius
+The FreeRADIUS software was updated to version 3.2.10. Highlights include:
+ * Initial implementation of Protocol-Failure as per IETF draft
+ * Suppress secrets by default in new installations (`supress_secrets=true`)
+ * Many other improvements and bug fixes.
+
+Please refer to the [FreeRADIUS release notes](https://www.freeradius.org/release_notes/) for more details.
+
 #### frr
 The FRRouting (frr) software was updated to version 10.7.1. Highlights include:
  * BFD authentication with keychain support (10.7.0)

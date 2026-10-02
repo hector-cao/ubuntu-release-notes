@@ -70,6 +70,34 @@ Besides the security fixes, the package was rebuilt against OpenSSL 4 and Lua 5.
 
 The complete list of changes is available in the [upstream changelog](https://downloads.apache.org/httpd/CHANGES_2.4).
 
+#### cyrus-sasl2
+
+Since Ubuntu 26.04 LTS, the binary libsasl2-modules-sql package no longer supports the PostgreSQL database on the i386 architecture ONLY. This package in all the other supported architectures in Ubuntu continues to support PostgreSQL. See bug [LP: #2142320](https://bugs.launchpad.net/ubuntu/+source/cyrus-sasl2/+bug/2142320) for more details.
+
+#### freeradius
+
+The FreeRADIUS software was updated to version 3.2.10. Highlights include:
+
+ * Initial implementation of Protocol-Failure as per IETF draft
+ * Suppress secrets by default in new installations (`supress_secrets=true`)
+ * Many other improvements and bug fixes.
+
+Please refer to the [FreeRADIUS release notes](https://www.freeradius.org/release_notes/) for more details.
+
+#### frr
+
+The FRRouting (frr) software was updated to version 10.7.1. Highlights include:
+
+ * BFD authentication with keychain support (10.7.0)
+ * BGP IPv6 VTEP support for EVPN (10.6.0)
+ * BGP graceful restart for EVPN (10.6.0)
+ * And many more improvements and bug fixes.
+
+Please refer to the respective release notes for more information:
+
+ * [FRRouting 10.7.0 release notes](https://frrouting.org/release/10.7.0/) and [FRRouting 10.7.1 release notes](https://frrouting.org/release/10.7.1/)
+ * [FRRouting 10.6.0 release notes](https://frrouting.org/release/10.6.0/) and [FRRouting 10.6.1 release notes](https://frrouting.org/release/10.6.1/)
+
 #### haproxy
 
 [haproxy](https://launchpad.net/ubuntu/+source/haproxy) jumped two feature releases, from 3.2 to upstream version 3.4.2. HAProxy 3.4 is an LTS branch, supported upstream until 2031-Q2.
@@ -87,11 +115,19 @@ See the [HAProxy 3.3](https://www.haproxy.com/blog/announcing-haproxy-3-3) and [
 
 #### libp11
 
-[libp11](https://launchpad.net/ubuntu/+source/libp11) was updated from 0.4.18 to upstream version 0.4.20. See the [0.4.19](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.19) and [0.4.20](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.20) upstream release notes for details.
+[libp11](https://launchpad.net/ubuntu/+source/libp11) was updated from 0.4.18 to upstream version 0.4.20. Highlights include:
+
+ * Post-quantum cryptography support (ML-DSA, SLH-DSA, and FALCON key generation, signing, and verification).
+ * OpenSSL 4.x support and a more complete PKCS#11 provider.
+ * Memory-safety and concurrency fixes.
+ * And many other improvements and bug fixes.
 
 Since Ubuntu now ships OpenSSL 4, which no longer supports engines, the `libengine-pkcs11-openssl` package only ships the PKCS#11 provider (installed under `ossl-modules/`) and no longer ships the OpenSSL ENGINE (see [LP: #2155023](https://bugs.launchpad.net/ubuntu/+source/libp11/+bug/2155023)). Configurations still referencing the `pkcs11` engine need to be migrated to the provider.
+See the [0.4.19](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.19) and [0.4.20](https://github.com/OpenSC/libp11/releases/tag/libp11-0.4.20) upstream release notes for full details.
 
+  
 #### openssh
+
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).
 
 [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi) produces:
@@ -100,6 +136,7 @@ OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh
  * `openssh-gssapi-client` - the client-side OpenSSH with GSSAPI
 
 Whereas [openssh](https://launchpad.net/ubuntu/+source/openssh) produces:
+
  * `openssh-server` - the server-side OpenSSH daemon without GSSAPI/Kerberos support.
  * `openssh-client` - the client-side OpenSSH without GSSAPI/Kerberos support.
  * and all the other regular openssh binary packages.
@@ -112,6 +149,7 @@ On top of that, the Ubuntu packaging of [openssh-gssapi](https://launchpad.net/u
 
 The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https://ubuntu.com/server/docs/how-to/software/upgrade-your-release/)) will check the system being upgraded for indications that GSSAPI/Kerberos is being used with openssh, and automatically select `openssh-server-gssapi` and/or `openssh-client-gssapi` for installation, if appropriate. Fresh installs of Ubuntu 26.10, however, will default to the non-GSSAPI/Kerberos versions of the OpenSSH server and client binaries.
 
+
 #### php8.5
 
 [php8.5](https://launchpad.net/ubuntu/+source/php8.5) was updated from 8.5.4 to upstream version 8.5.9. These are bugfix and security point releases, with no new language features. Among the fixed issues are a heap corruption in `openssl_encrypt()` with AES-WRAP-PAD, an out-of-bounds write in `bccomp()`, an SQL injection through `E'...'` escape sequences, and two vulnerabilities in the bundled `uriparser` library.
@@ -123,6 +161,31 @@ Two packaging changes are worth noting:
 * The package was rebuilt against OpenSSL 4.
 
 See the [upstream changelog](https://www.php.net/ChangeLog-8.php#PHP_8_5) for the full list of changes.
+
+
+#### postfix
+
+Postfix in Ubuntu Server 26.10 has been updated to version 3.11.7. Important changes include:
+ * BerkeleyDB support has been deprecated. This affects the `hash:` and `btree:` map types. These types are still available, but their use will issue a deprecation warning. Such maps should be migrated to other formats. Please see [Postfix Non-Berkeley-DB migration](https://www.postfix.org/NON_BERKELEYDB_README.html) for more information.
+ * Several tools now support JSON output: `postconf`, `postalias`, `postmap`, and `postmulti`.
+
+Please see the [Postfix 3.11.0 announcement](https://www.postfix.org/announcements/postfix-3.11.0.html) for the full list of changes.
+
+
+#### samba
+
+Samba in Ubuntu Server 26.10 has been updated to version 4.24.7. Important changes include:
+
+ * New audit logging classes for some Active Directory attributes.
+ * `vfs_streams_xattr` can hold larger streams.
+ * Support for remote password management for Entra ID SSPR and Key cloak.
+ * Kerberos PKINIT KeyTrust logon support.
+ * Support for Windows Strong and Flexible key mappings as outlined in KB5014754: Certificate-based authentication changes on Windows domain controllers.
+ * Domain encryption types changed to AES by default.
+ * And many other improvements and bug fixes.
+
+Please see the [Samba 4.24.0 release notes](https://www.samba.org/samba/history/samba-4.24.0.html) for the full list of changes.
+
 
 #### squid
 
@@ -137,12 +200,16 @@ The details for each release are available in the [upstream release notes](https
 
 On the packaging side, squid now builds against OpenSSL 4.
 
+
 #### sssd
 
 [sssd](https://launchpad.net/ubuntu/+source/sssd) received some fixes in version 0.12.0:
 
 * Two security issues were fixed: a denial of service in the PAM responder caused by missing validation of the authentication token length, and a use-after-free crash in `sssd_pam` while processing `p11_child` results with slow smartcards (see [LP: #2162577](https://bugs.launchpad.net/ubuntu/+source/sssd/+bug/2162577)).
 * SSSD was made compatible with OpenSSL 4 and with GDM 51.
+
+
+
 
 ### OpenStack
 ### Platforms

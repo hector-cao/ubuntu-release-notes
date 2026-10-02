@@ -282,6 +282,8 @@ linkcheck_ignore = [
     r"https://docs\.kernel\.org/admin-guide/gpio/sysfs\.html",
     r"https://kubuntu\.org/news/.*",
     r"https://ubuntuunity\.org/blog/.*",
+    # 8.10 release notes: bot-challenged (403) external link
+    r"http://psubuntu\.com/.*",
 ]
 
 

@@ -41,7 +41,7 @@ For more information, please see [Bug 290925](https://bugs.launchpad.net/ubuntu-
 (8-10-slow-start-to-select-and-install-software-step-in-text-mode-installer)=
 ### Slow start to "Select and install software" step in text-mode installer
 
-The "Select and install software" step in the text-mode install CD may appear to hang at a low single-digit percentage. This is particularly the case for netboot installations, where there will be no progress bar updates at all while downloading packages. This is due to a fault in the interaction between the installer and `apt-get`, which was diagnosed too late to fix for Ubuntu 8.10: [bug 290234](https://launchpad.net/bugs/290234).
+The "Select and install software" step in the text-mode install CD may appear to freeze at a low single-digit percentage. This is particularly the case for netboot installations, where there will be no progress bar updates at all while downloading packages. This is due to a fault in the interaction between the installer and `apt-get`, which was diagnosed too late to fix for Ubuntu 8.10: [bug 290234](https://launchpad.net/bugs/290234).
 
 You can find out whether the installer is making progress by pressing Alt-F4 to switch to the logging console; Alt-F1 switches back to the main installer. (If you are installing in QEMU or KVM, be careful to press Ctrl+Alt or click in the window to have the emulator grab focus before pressing Alt-F4, as otherwise this will close the emulator!)
 
@@ -51,7 +51,7 @@ You can find out whether the installer is making progress by pressing Alt-F4 to 
 
 The OEM end-user configuration tool mishandles selection of languages that do not use the ASCII or ISO-8859-1 character sets, and the end user will end up with no localisation set after selecting such languages ([bug 290580](https://launchpad.net/bugs/290580)). The list of _known-good_ languages is as follows: Basque, Catalan, Danish, Dutch, English, Finnish, French, Galician, German, Indonesian, Italian, Northern Sami, Norwegian Bokmål, Norwegian Nynorsk, Portuguese, Portuguese (Brazil), Spanish, Swedish, Tagalog.
 
-For the meantime, OEMs affected by this problem may apply this [patch](http://bazaar.launchpad.net/~ubuntu-core-dev/oem-config/trunk/revision/555) (the `scripts/tzsetup` part) to the file `/usr/lib/oem-config/timezone/tzsetup` before running "Prepare for shipping to end user". We expect to release an update for this in due course, which will be installable via the normal packaging system at that same stage.
+For the meantime, OEMs affected by this problem may apply this patch `http://bazaar.launchpad.net/~ubuntu-core-dev/oem-config/trunk/revision/555` (the `scripts/tzsetup` part) to the file `/usr/lib/oem-config/timezone/tzsetup` before running "Prepare for shipping to end user". We expect to release an update for this in due course, which will be installable via the normal packaging system at that same stage.
 
 
 (8-10-mid-image-requires-a-network-for-successful-installation)=
@@ -67,7 +67,7 @@ In accordance with the Debian Policy Manual (which says "The 'Recommends' field 
 
 
 (8-10-password-limitation-with-ecryptfs)=
-### Password limitation with ecryptfs
+### Password limitation with `ecryptfs`
 
 Users of the alternate/server installation who choose a password containing a "%" or a "-" will end up with an encrypted ~/Private directory that will not mount on reboot and subsequent logins. To fix this, affected users will need to do the following in the newly installed system:
 
@@ -87,7 +87,7 @@ There are some non-fatal issues with installation from the alternate install CD 
 (8-10-upgrading)=
 ## Upgrading
 
-Users of Ubuntu 8.04 LTS can upgrade to Ubuntu 8.10 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 8.04 LTS first, and then to 8.10. Complete instructions may be found at [www.ubuntu.com/getubuntu/upgrading](http://www.ubuntu.com/getubuntu/upgrading).
+Users of Ubuntu 8.04 LTS can upgrade to Ubuntu 8.10 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 8.04 LTS first, and then to 8.10. Complete instructions may be found at `www.ubuntu.com/getubuntu/upgrading`.
 
 
 (8-10-nvidia-legacy-video-support)=
@@ -99,7 +99,7 @@ Users of other nVidia chipsets that are supported by the 173 or 177 driver serie
 
 
 (8-10-ati-fglrx-video-support)=
-### ATI "fglrx" video support
+### ATI `fglrx` video support
 
 The ATI video driver in 8.10 drops support for video cards with r300 based chips (the Radeon 9500 - X600 Series of cards). If you have such a card, please use "Hardware Drivers" at System/Administration to disable it before the upgrade.
 Please see [bug 284408](https://bugs.launchpad.net/ubuntu/+source/fglrx-installer/+bug/284408) for more information
@@ -112,7 +112,7 @@ The X.Org configuration file (`/etc/X11/xorg.conf`) still has InputDevice entrie
 
 
 (8-10-x-org-evdev-xmodmap-incompatibility)=
-### X.Org evdev xmodmap incompatibility
+### X.Org `evdev` `xmodmap` incompatibility
 
 The X keycodes generated with the new `evdev` input driver in X.Org 1.5 are not compatible with those generated in Ubuntu 8.04 LTS and before.  If you have configured keybindings for your user with a `~/.Xmodmap` file, you will need to convert or disable it by hand on upgrade.
 
@@ -148,9 +148,9 @@ After an upgrade from Kubuntu 8.04 KDE 4 Remix, logging in will return directly 
 
 
 (8-10-support-for-ssl-blowfish-v0-2-version-2-0-1-not-in-encfs)=
-### Support for ssl/blowfish-v0.2, version 2:0:1 not in encfs
+### Support for ssl/blowfish-v0.2, version 2:0:1 not in `encfs`
 
-Compatibility for this old algorithm was dropped in the 1.4.x version of `encfs` included in Ubuntu 8.10. Before upgrading, users of this algorithm will have to manually migrate their encfs volumes to a new one created with the new version. Alternatively, you may stay at an old version of encfs to be able to read the volumes.
+Compatibility for this old algorithm was dropped in the 1.4.x version of `encfs` included in Ubuntu 8.10. Before upgrading, users of this algorithm will have to manually migrate their `encfs` volumes to a new one created with the new version. Alternatively, you may stay at an old version of `encfs` to be able to read the volumes.
 
 
 (8-10-playstation-3-upgrade-issues)=
@@ -265,10 +265,10 @@ options cfg80211 ieee80211_regdom=JP
 (8-10-cyrus-sasl-database-created-with-incorrect-permissions)=
 ### Cyrus SASL database created with incorrect permissions
 
-Cyrus SASL creates the database for its sasldb2 plugin with incorrect permissions. As a result, other users of this database, such as cyrus-imap, will not be able to access it and will fail. This does not affect upgrades of existing databases from a previous release. The workaround is to manually change the group of /etc/sasldb2 to sasl:
+Cyrus SASL creates the database for its sasldb2 plugin with incorrect permissions. As a result, other users of this database, such as cyrus-imap, will not be able to access it and will fail. This does not affect upgrades of existing databases from a previous release. The workaround is to manually change the group of /etc/sasldb2 to `sasl`:
 
 ```none
-$ sudo chgrp sasl /etc/sasldb2
+sudo chgrp sasl /etc/sasldb2
 ```
 
 See [bug 288478](https://launchpad.net/bugs/288478) for details.
@@ -277,7 +277,7 @@ See [bug 288478](https://launchpad.net/bugs/288478) for details.
 (8-10-access-to-java-runtime-environment)=
 ### Access to Java Runtime Environment
 
-To use Java programs, you need to install the `openjdk-6-jre` package whch contains the Java Runtime Environment. If you want to develop Java programs, then install the `openjdk-6-jdk` package. To work with Java applets in the Firefox browser and compatible browsers on x86 architectures, you need to install the `icedtea6-plugin` package by hand.
+To use Java programs, you need to install the `openjdk-6-jre` package which contains the Java Runtime Environment. If you want to develop Java programs, then install the `openjdk-6-jdk` package. To work with Java applets in the Firefox browser and compatible browsers on x86 architectures, you need to install the `icedtea6-plugin` package by hand.
 
 The JRE and the Java applet plugin are installed by default in the live session on the Ubuntu DVD, but are not currently installed elsewhere due to space constraints. However, a [missing feature](https://launchpad.net/bugs/290400) in the installer means that these packages will not be installed when installing using the graphical installer on the DVD, so you will need to install them afterwards.
 
@@ -297,9 +297,9 @@ Many applications are capable of automatically saving, or offering to save, any 
 
 
 (8-10-hangs-with-desktop-effects-on-intel-830mg-and-845g-video-cards)=
-### Hangs with desktop effects on Intel 830MG and 845G video cards
+### Freezes with desktop effects on Intel 830MG and 845G video cards
 
-There is a bug in the Intel video driver for the older intel 830 and 845 integrated video cards that are used on laptops like the IBM R30. Desktop effects with compiz will not work on those chips and will freeze the system. For new installations, please install using the safe graphics mode (press F4 in the startup screen) on these systems and disable desktop effects via `System -> Preferences -> Appearance`, clicking on "Visual effects" and choosing "None".
+There is a bug in the Intel video driver for the older intel 830 and 845 integrated video cards that are used on laptops like the IBM R30. Desktop effects with `compiz` will not work on those chips and will freeze the system. For new installations, please install using the safe graphics mode (press F4 in the startup screen) on these systems and disable desktop effects via `System -> Preferences -> Appearance`, clicking on "Visual effects" and choosing "None".
 
 
 (8-10-playstation-3-issues)=
@@ -309,6 +309,6 @@ There are a variety of other known issues affecting PlayStation 3 systems, docum
 
 * To get back to the Sony PlayStation 3 XMB operating system from the boot prompt, users need to type `game` and press the Return key ([bug 277839](https://launchpad.net/bugs/277839)). If this is for some reason not possible, carrying out a hard-reset (see PS3 instruction manual) will return to the XMB on next run.
 
-* Users may occasionally see an intermittent shutdown hang with a message like "IRQ 50: nobody cared". The problem has been reported upstream. Press and hold the PS3 power button until you hear 2 beeps will force power off. The system will boot normally on next run ([bug 220370](https://launchpad.net/bugs/220370)).
+* Users may occasionally see an intermittent shutdown freeze with a message like "IRQ 50: nobody cared". The problem has been reported upstream. Press and hold the PS3 power button until you hear 2 beeps will force power off. The system will boot normally on next run ([bug 220370](https://launchpad.net/bugs/220370)).
 
 * NetworkManager does not list available wireless networks, although it is possible to connect to a wireless network with a known SSID using the "connect to hidden wireless network" option ([bug 289977](https://launchpad.net/bugs/289977)); and it cannot connect to WPA/WPA2 wireless networks, although WEP works ([bug 289982](https://launchpad.net/bugs/289982)).

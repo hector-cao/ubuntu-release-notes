@@ -131,6 +131,30 @@ InfiniBand/RoCE/iWARP networking and storage (NVMe-oF, SRP, etc.) devices.
   buffer-allocation ordering fix, and preference for IPv6 wildcard when
   binding the control channel.
 
+#### libmail-dmarc-perl
+
+`libmail-dmarc-perl` is a Perl implementation of DMARC (Domain-based Message
+Authentication, Reporting and Conformance). It is used by MTAs and filtering
+tools (e.g. SpamAssassin) to:
+
+- Validate that incoming messages align with the purported sender's SPF/DKIM
+  policy (`Mail::DMARC::PurePerl->validate`).
+- Receive, store and view DMARC aggregate/forensic reports from other mail
+  servers (report store with SQLite/MySQL/PostgreSQL backends, CLI and web
+  viewers).
+- Send DMARC reports to author domains as an MTA operator.
+
+Between Resolute and Stonking, `libmail-dmarc-perl` moved from upstream
+`1.20250805` to `1.20260306`, bringing new report-handling robustness
+(gzip/zip ingestion, error-tolerant archive parsing), a modernized web
+reporting UI (DataTables), new filtering/CLI options for `dmarc_view_reports`,
+and a new SQLite-MySQL migration helper.
+
+- New `dmarc_sqlite_to_mysql` migration script.
+- MySQL: enable SSL for newer MySQL; fixed schema for new imports.
+- `dmarc_receive`: `eval` un(g)zip so imperfect archives no longer interrupt
+  the processing loop.
+- `dmarc_receive`: support for gzip, zip, and XML report files (#277).
 
 #### openssh
 OpenSSH in Ubuntu Server 26.10 has been split into two source packages: [openssh](https://launchpad.net/ubuntu/+source/openssh) and [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi). The main difference between them is that [openssh](https://launchpad.net/ubuntu/+source/openssh) produces binary packages WITHOUT GSSAPI/Kerberos support. That support has been moved to [openssh-gssapi](https://launchpad.net/ubuntu/+source/openssh-gssapi).

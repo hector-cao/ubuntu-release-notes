@@ -8,5 +8,9 @@
 24.10 (Oracular Oriole) <24.10/index>
 22.10 (Kinetic Kudu) <22.10/index>
 9.10 (Karmic Koala) <9.10/index>
+9.04 (Jaunty Jackalope) <9.04/index>
+8.10 (Intrepid Ibex) <8.10/index>
+8.04 LTS (Hardy Heron) <8.04/index>
+7.10 (Gutsy Gibbon) <7.10/index>
 6.06 LTS (Dapper Drake) <6.06/index>
 :::

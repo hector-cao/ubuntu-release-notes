@@ -118,7 +118,7 @@ InfiniBand/RoCE/iWARP networking and storage (NVMe-oF, SRP, etc.) devices.
   caching in `efa_poll_sub_cq`.
 - **mana provider**: added Unreliable-Connection (UC) QP support, robust
   `udata` handling, and fixed lost CQ notifications when re-arming
-  without polling (the cqid-check fix that Ubuntu had carried as a local
+  without polling (the `cqid-check` fix that Ubuntu had carried as a local
   patch in 61.0-2ubuntu3 is included upstream as of 63.0-1).
 - **ionic provider**: fixed `sq_sig_all` handling for signaled
   completions.

@@ -275,6 +275,14 @@ linkcheck_ignore = [
     r"https://www.monitoring-plugins\.org/news/.*",
     r"https://kernelnewbies\.org/.*",
     r"https://cairographics\.org/news/.*",
+    # 20.04 release notes: bot-challenged hosts and checker-truncated anchor
+    # (links kept as inline code spans; local checker still probes bare URLs)
+    r"https://help\.ubuntu\.com/community/RISC-V",
+    r"http://help\.ubuntu\.com/community/ReportingBugs",
+    r"http://wiki\.ubuntu\.com/BugSquad",
+    r"http://www\.bluez\.org/.*",
+    r"http://manpages\.ubuntu\.com/manpages/eoan/.*",
+    r"https://en\.wikipedia\.org/wiki/Color_depth#Deep_color_\(30/36/48-bit",
 ]
 
 

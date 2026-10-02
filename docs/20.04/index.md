@@ -107,7 +107,7 @@ Users of the i386 architecture will not be presented with an upgrade to Ubuntu 2
 (20-04-lts-risc-v-image)=
 ### RISC-V image
 
-RISC-V images for SiFive HiFive Unleashed and Unmatched boards are now available, which can also be used as a VM with QEMU on any Ubuntu 20.04 machine. For more details see RISC-V `https://help.ubuntu.com/community/RISC-V` page.
+RISC-V images for SiFive HiFive Unleashed and Unmatched boards are now available, which can also be used as a VM with QEMU on any Ubuntu 20.04 machine. For more details see [RISC-V](https://help.ubuntu.com/community/RISC-V) page.
 
 
 (20-04-lts-updated-packages)=
@@ -176,13 +176,13 @@ Ubuntu 20.04 LTS comes with refreshed state-of-the-art toolchain including new u
 
   * Smoother performance, lower CPU usage for [window and overview animations](https://bugs.launchpad.net/bugs/1725180), [JavaScript execution](https://gitlab.gnome.org/GNOME/gjs/issues/302), [mouse movement](https://bugs.launchpad.net/bugs/1848951) and [window movement (which also has lower latency now)](https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/724).
 
-  * 10-bit deep colour `https://en.wikipedia.org/wiki/Color_depth#Deep_color_(30/36/48-bit)` support.
+  * 10-bit [deep colour](https://en.wikipedia.org/wiki/Color_depth#Deep_color_(30/36/48-bit)) support.
 
   * X11 fractional scaling.
 
 * [Mesa](https://www.mesa3d.org/) 20.0 OpenGL stack
 
-* BlueZ `http://www.bluez.org/` 5.53
+* [BlueZ](http://www.bluez.org/) 5.53
 
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) 14.0 (prerelease)
 
@@ -915,7 +915,7 @@ The release notes for the official flavors can be found at the following links:
 (20-04-lts-reporting-bugs)=
 ### Reporting bugs
 
-Your comments, bug reports, patches and suggestions will help fix bugs and improve the quality of future releases. Please report bugs using the tools provided `http://help.ubuntu.com/community/ReportingBugs`.
+Your comments, bug reports, patches and suggestions will help fix bugs and improve the quality of future releases. Please [report bugs using the tools provided](http://help.ubuntu.com/community/ReportingBugs).
 
 If you want to help out with bugs, the Bug Squad `http://wiki.ubuntu.com/BugSquad` is always looking for help.
 

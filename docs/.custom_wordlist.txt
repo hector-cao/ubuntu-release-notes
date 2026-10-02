@@ -1252,3 +1252,13 @@ Zstack
 Zstd
 zstd
 Hyperpixel
+Athlon
+Atheros
+Wacom
+Sami
+OEMs
+chipsets
+killswitch
+keycodes
+hotplugging
+autodetection

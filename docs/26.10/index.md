@@ -140,7 +140,7 @@ tools (e.g. SpamAssassin) to:
 - Validate that incoming messages align with the purported sender's SPF/DKIM
   policy (`Mail::DMARC::PurePerl->validate`).
 - Receive, store and view DMARC aggregate/forensic reports from other mail
-  servers (report store with SQLite/MySQL/PostgreSQL backends, CLI and web
+  servers (report store with SQLite/MySQL/PostgreSQL backends, CLI, and web
   viewers).
 - Send DMARC reports to author domains as an MTA operator.
 

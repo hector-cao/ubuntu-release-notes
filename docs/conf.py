@@ -262,6 +262,7 @@ linkcheck_ignore = [
     r"https?://help\.ubuntu\.com/community/UEC.*",
     r"http://one\.ubuntu\.com.*",
     r"http://wiki\.samba\.org/index\.php/Windows7.*",
+    r"https://www\.samba\.org.*",
     # 8.10 release notes: bot-challenged (403) external link
     r"http://psubuntu\.com/.*",
     # 8.04 release notes: archive.canonical.com times out from CI

@@ -41,7 +41,7 @@ The [GNOME](http://www.gnome.org) base platform has been updated to the current 
 
 [Evolution](http://projects.gnome.org/evolution/) was updated to the 2.30 version, which operates much faster compared to the version in Ubuntu 10.04 LTS.
 
-Shotwell `http://yorba.org/shotwell/` has replaced [F-Spot](http://f-spot.org/) as the default photo manager.
+Shotwell `http://yorba.org/shotwell/` has replaced F-Spot as the default photo manager.
 
 [`Gwibber`](http://gwibber.com/) has been updated to support the recent change in Twitter's authentication system, as well as changing the back end storage to improve performance.
 
@@ -139,7 +139,7 @@ In this release,  Mythbuntu has updated to [MythTV 0.23.1](http://www.mythtv.org
 
 RC includes the 2.6.35-22.33 kernel which is based on the 2.6.35.4 Upstream stable [kernel](http://kernel.org).
 
-This kernel includes additional input subsystem patches for improved multitouch capability, improved support for Intel Sandybridge which includes support for 82579 LOM's, Apparmor bug fixes, reverts some KMS disablement patches, and general security updates ([CVE-2010-3081](http://people.canonical.com/~ubuntu-security/cve/2010/CVE-2010-3081.html),[CVE-2010-3301](http://people.canonical.com/~ubuntu-security/cve/2010/CVE-2010-3301.html)).  With 10.10 we have also dropped support for i586 and lower processors, as well as i686 processors without `cmov` support.
+This kernel includes additional input subsystem patches for improved multitouch capability, improved support for Intel Sandybridge which includes support for 82579 LOM's, Apparmor bug fixes, reverts some KMS disablement patches, and general security updates ([CVE-2010-3081](https://ubuntu.com/security/CVE-2010-3081),[CVE-2010-3301](https://ubuntu.com/security/CVE-2010-3301)).  With 10.10 we have also dropped support for i586 and lower processors, as well as i686 processors without `cmov` support.
 
 This kernel also includes new [security enhancements](https://wiki.ubuntu.com/SecurityTeam/Roadmap/KernelHardening). Of major note is the change to the default behavior of [PTRACE](https://wiki.ubuntu.com/SecurityTeam/Roadmap/KernelHardening#ptrace) which is used by gdb, strace, `ltrace`, etc. The behavior for 10.10 is that only child processes can be `PTRACEd`, due to the default value of "1" in `/proc/sys/kernel/ptrace_scope`. This value may be inappropriate for some development systems and servers with only admin accounts. If using "sudo" for PTRACE is not desired, please change this value to "0", though read `/etc/sysctl.d/10-ptrace.conf` for more details.
 

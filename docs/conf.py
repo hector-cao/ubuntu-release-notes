@@ -269,6 +269,7 @@ linkcheck_ignore = [
     r"https?://www\.kdedevelopers\.org/.*",
     r"https?://help\.ubuntu\.com/community/UEC/Images",
     r"https?://help\.ubuntu\.com/community/MaverickUpgrades/Kubuntu",
+    r"https://www\.mythtv\.org/",
     # 9.10 release notes: bot-challenged (403 / timeout) external links
     r"https?://help\.ubuntu\.com/community/UEC.*",
     r"http://one\.ubuntu\.com.*",

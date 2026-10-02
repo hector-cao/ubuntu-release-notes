@@ -282,6 +282,10 @@ linkcheck_ignore = [
     r"https://docs\.kernel\.org/admin-guide/gpio/sysfs\.html",
     r"https://kubuntu\.org/news/.*",
     r"https://ubuntuunity\.org/blog/.*",
+    # 10.10 release notes: bot-challenged / TLS-broken external links
+    r"https?://www\.kdedevelopers\.org/.*",
+    r"https?://help\.ubuntu\.com/community/UEC/Images",
+    r"https?://help\.ubuntu\.com/community/MaverickUpgrades/Kubuntu",
 ]
 
 

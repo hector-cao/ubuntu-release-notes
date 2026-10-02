@@ -144,7 +144,7 @@ tools (e.g. SpamAssassin) to:
   viewers).
 - Send DMARC reports to author domains as an MTA operator.
 
-Between Resolute and Stonking, `libmail-dmarc-perl` moved from upstream
+Between Ubuntu 26.04 LTS (Resolute Raccoon) and Ubuntu 26.10 (Stonking Stingray), `libmail-dmarc-perl` moved from upstream
 `1.20250805` to `1.20260306`, bringing new report-handling robustness
 (gzip/zip ingestion, error-tolerant archive parsing), a modernized web
 reporting UI (DataTables), new filtering/CLI options for `dmarc_view_reports`,

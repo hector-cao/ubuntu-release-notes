@@ -149,6 +149,13 @@ On top of that, the Ubuntu packaging of [openssh-gssapi](https://launchpad.net/u
 
 The Ubuntu release upgrader tool (see [How to upgrade your Ubuntu release](https://ubuntu.com/server/docs/how-to/software/upgrade-your-release/)) will check the system being upgraded for indications that GSSAPI/Kerberos is being used with openssh, and automatically select `openssh-server-gssapi` and/or `openssh-client-gssapi` for installation, if appropriate. Fresh installs of Ubuntu 26.10, however, will default to the non-GSSAPI/Kerberos versions of the OpenSSH server and client binaries.
 
+Both `openssh` and `openssh-gssapi` are now on version 10.5, containing various bug fixes and security fixes. See the [upstream release notes](https://www.openssh.org/releasenotes.html).
+
+
+#### OpenLDAP
+
+Updated from 2.6.10 to 2.6.13, which contains various bugfixes. See the [2.6 series upstream release notes](https://git.openldap.org/openldap/openldap/-/blob/OPENLDAP_REL_ENG_2_6/CHANGES)
+
 
 #### php8.5
 

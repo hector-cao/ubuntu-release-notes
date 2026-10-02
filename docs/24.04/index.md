@@ -12,6 +12,7 @@ For details of the changes applied since 24.04, refer to the following changelog
 :::{toctree}
 :maxdepth: 1
 
+24.04.5 <5>
 24.04.4 <4>
 24.04.3 <3>
 24.04.2 <2>
@@ -237,7 +238,7 @@ The `irqbalance` service is designed to distribute hardware interrupts across
 processors on a multiprocessor system to increase performance. This is
 particularly useful in server configurations where multiple devices will be
 competing for the CPU’s attention. And in doing so it has served Ubuntu well
-being default enabled since 14 years based on [a discussion](https://lists.ubuntu.com/archives/ubuntu-devel/2010-January/029939.html) and related to
+being default enabled since 14 years based on [a discussion](https://lists.ubuntu.com/archives/ubuntu-devel/2010-January/030009.html) and related to
 the [kernel actively delegating this to userspace](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8b8e8c1bf7275eca859fe551dfa484134eaf013b).
 
 But evolution of the wider ecosystem has outpaced irqbalance in most situations.
@@ -531,7 +532,7 @@ Then the release upgrade to Ubuntu Noble will replace those packages with the ne
 * `sudo apt install qemu-block-supplemental`, or
 * `sudo apt install samba-vfs-modules-extra`
 
-Considerations were made ([ubuntu-devel mailing list thread](https://lists.ubuntu.com/archives/ubuntu-devel/2024-January/042872.html)) to perhaps include this logic in the Ubuntu release upgrade tool, but it was decided to not increase the complexity of the upgrader at this time. If you have a different scenario where this will have a big impact on your deployments, then please comment on the [LP: #2045063](https://bugs.launchpad.net/ubuntu/+source/glusterfs/+bug/2045063) bug.
+Considerations were made ([ubuntu-devel mailing list thread](https://lists.ubuntu.com/archives/ubuntu-devel/2024-January/042921.html)) to perhaps include this logic in the Ubuntu release upgrade tool, but it was decided to not increase the complexity of the upgrader at this time. If you have a different scenario where this will have a big impact on your deployments, then please comment on the [LP: #2045063](https://bugs.launchpad.net/ubuntu/+source/glusterfs/+bug/2045063) bug.
 
 
 #### HAProxy

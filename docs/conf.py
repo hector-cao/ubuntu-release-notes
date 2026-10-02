@@ -148,7 +148,7 @@ html_extra_path = []
 # - https://git.launchpad.net/example
 #
 html_theme_options = {
-    # 'source_edit_link': 'https://github.com/ubuntu/ubuntu-release-notes',
+    "source_edit_link": "https://github.com/ubuntu/ubuntu-release-notes",
 }
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
@@ -239,6 +239,10 @@ linkcheck_ignore = [
     r"https://discourse\.lubuntu\.me/.*",
     r"https://downloads\.apache\.org/.*",
     r"https://www\.freedesktop\.org/.*",
+    r"https://gstreamer\.freedesktop\.org/.*",
+    r"https://linux-nfs\.org/wiki/.*",
+    # Flaky host (intermittent connection aborts from CI)
+    r"https://www\.xfce\.org/.*",
     # Launchpad: bugs/commits may be private or deleted
     r"https://bugs\.launchpad\.net/.*",
     r"https://git\.launchpad\.net/.*",
@@ -252,6 +256,8 @@ linkcheck_ignore = [
     r"https://lubuntu\.me/.*",
     # Filenames in text incorrectly parsed as URLs by the link checker
     r"http://[^\s/]+\.(py|sh|mk|in)$",
+    # Servers being migrated right now - ignore for now
+    r"https://ubuntukylin\.com/.*",
     # Dead links in existing content (historical; not worth updating)
     r"https://github\.com/docker-snap/.*",
     r"https://github\.com/ipxe/.*",
@@ -259,6 +265,16 @@ linkcheck_ignore = [
     # Unreleased / forthcoming Discourse posts
     r"https://discourse\.ubuntu\.com/t/edubuntu-.*",
     r"https://discourse\.ubuntu\.com/t/ubuntu-studio-.*",
+    # Various, probably rate-limited
+    r"https://thekelleys\.org\.uk/gitweb/.*",
+    r"https://git\.openldap\.org/.*",
+    r"https://github\.com/canonical/.*",
+    r"https://github\.com/snapcore/.*",
+    r"https://github\.com/systemd/.*",
+    r"https://ubuntustudio\.org/ubuntu-studio-.*-release-notes/",
+    r"https://www.monitoring-plugins\.org/news/.*",
+    r"https://kernelnewbies\.org/.*",
+    r"https://cairographics\.org/news/.*",
 ]
 
 
@@ -337,7 +353,7 @@ extensions = [
 # Excludes files or directories from processing
 
 exclude_patterns = [
-    "doc-cheat-sheet*",
+    "reuse/*-template.md",
     ".venv*",
 ]
 

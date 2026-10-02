@@ -1251,3 +1251,6 @@ zpwr
 Zstack
 Zstd
 zstd
+maintainer's
+ISPs
+chipsets

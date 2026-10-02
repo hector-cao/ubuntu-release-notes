@@ -275,6 +275,8 @@ linkcheck_ignore = [
     r"https://www.monitoring-plugins\.org/news/.*",
     r"https://kernelnewbies\.org/.*",
     r"https://cairographics\.org/news/.*",
+    # Old apt repository host unreachable from CI (historical release notes)
+    r"http://archive\.canonical\.com/.*",
 ]
 
 

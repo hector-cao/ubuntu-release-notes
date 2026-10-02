@@ -51,9 +51,9 @@ On the ARM-based Babbage board, the installation medium (an SD card) is reused a
 (9-04-upgrading)=
 ## Upgrading
 
-Users of Ubuntu 8.10 can upgrade to Ubuntu 9.04 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 8.10 first, and then to 9.04. Complete instructions may be found at [www.ubuntu.com/getubuntu/upgrading](http://www.ubuntu.com/getubuntu/upgrading).
+Users of Ubuntu 8.10 can upgrade to Ubuntu 9.04 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 8.10 first, and then to 9.04. Complete instructions may be found at `www.ubuntu.com/getubuntu/upgrading`.
 
-Kubuntu users can upgrade directly from Kubuntu 8.04 to Kubuntu 9.04.  Users upgrading in this way are advised to also read the [release notes for Ubuntu 8.10](http://www.ubuntu.com/getubuntu/releasenotes/810), as the issues described there will also apply.
+Kubuntu users can upgrade directly from Kubuntu 8.04 to Kubuntu 9.04.  Users upgrading in this way are advised to also read the release notes for Ubuntu 8.10 `http://www.ubuntu.com/getubuntu/releasenotes/810`, as the issues described there will also apply.
 
 
 (9-04-boot-failures-on-systems-with-intel-d945-motherboards)=
@@ -65,7 +65,7 @@ Users have reported slower than normal detection of SATA hard drives on systems 
 (9-04-upgrades-from-beta-may-use-label-in-etc-fstab)=
 ### Upgrades from beta may use LABEL= in /etc/fstab
 
-Systems installed using Jaunty Alpha 5, Jaunty Alpha 6, or the Ubuntu 9.04 beta may use `LABEL=` syntax in `/etc/fstab` to identify file systems. This may cause unexpected behaviour later if another disk (such as a USB drive) is added later containing file systems with clashing labels. Unless you are sure that this is what you intend, we recommend that you switch to using universally unique identifiers (UUIDs) instead.
+Systems installed using Jaunty Alpha 5, Jaunty Alpha 6, or the Ubuntu 9.04 beta may use `LABEL=` syntax in `/etc/fstab` to identify file systems. This may cause unexpected behaviour later if another disk (such as a USB drive) is added later containing file systems with clashing labels. Unless you are sure that this is what you intend, we recommend that you switch to using universally unique identifiers (`UUIDs`) instead.
 
 For example, if a file system is identified as `LABEL=home` in `/etc/fstab`, you can find the UUID as follows:
 
@@ -73,7 +73,7 @@ For example, if a file system is identified as `LABEL=home` in `/etc/fstab`, you
 blkid -o value -s UUID -l -t LABEL=home
 ```
 
-You can then replace `LABEL=home` with `UUID=output`, where `output` is the output of blkid.
+You can then replace `LABEL=home` with `UUID=output`, where `output` is the output of `blkid`.
 
 Systems installed using the release candidate or final release of Ubuntu 9.04 do not have this problem.
 
@@ -101,13 +101,13 @@ for each `python-foo` package providing an affected module.
 (9-04-upgrades-from-alphas-may-need-re-encryption-of-encrypted-home-directories)=
 ### Upgrades from alphas may need re-encryption of encrypted home directories
 
-Users who were running eCryptfs on the Jaunty Alpha milestones are advised to re-encrypt any encrypted files. An upstream 2.6.28 kernel bug caused random kernel memory to be written to eCryptfs encrypted file headers. The fix has been applied and deployed to Ubuntu users in the Ubuntu 9.04 release candidate. After upgrading to Ubuntu 9.04, eCryptfs users should re-encrypt each encrypted file using /usr/bin/ecryptfs-rewrite-file. For more information, please see [ecryptfs-rewrite-file(1)](http://manpages.ubuntu.com/manpages/jaunty/en/man1/ecryptfs-rewrite-file.1.html). (Bug:345544)
+Users who were running `eCryptfs` on the Jaunty Alpha milestones are advised to re-encrypt any encrypted files. An upstream 2.6.28 kernel bug caused random kernel memory to be written to `eCryptfs` encrypted file headers. The fix has been applied and deployed to Ubuntu users in the Ubuntu 9.04 release candidate. After upgrading to Ubuntu 9.04, `eCryptfs` users should re-encrypt each encrypted file using /usr/bin/ecryptfs-rewrite-file. For more information, please see ecryptfs-rewrite-file(1) `http://manpages.ubuntu.com/manpages/jaunty/en/man1/ecryptfs-rewrite-file.1.html`. (Bug:345544)
 
 
 (9-04-upgrades-from-8-10-users-with-encrypted-private-directories)=
 ### Upgrades from 8.10 Users with Encrypted Private Directories
 
-Users of 8.10 with Encrypted Private Directories should **not** use the LiveCD to do the upgrade.  These users **will experience** Bug:361627.  These users should use [update-manager to perform a network upgrade](http://www.ubuntu.com/getubuntu/upgrading).
+Users of 8.10 with Encrypted Private Directories should **not** use the LiveCD to do the upgrade.  These users **will experience** Bug:361627.  These users should use update-manager to perform a network upgrade `http://www.ubuntu.com/getubuntu/upgrading`.
 
 
 (9-04-upgrades-from-ubuntu-8-10-may-have-lilo-installed)=
@@ -136,15 +136,15 @@ Click the Plasma icon in the bottom right.  Click Add Widget. Double click on Ne
 
 
 (9-04-x-server-crashes-when-using-a-wacom-tablet)=
-### X server crashes when using a wacom tablet
+### X server crashes when using a `wacom` tablet
 
-The wacom driver in Ubuntu 9.04 supports automatic configuration, but it conflicts with manual device entries for wacom tablets in `/etc/X11/xorg.conf`, causing the X server to crash either on startup or shutdown. Please comment out or remove the entries from `xorg.conf` to get rid of the crashes. (Bug:358643)
+The `wacom` driver in Ubuntu 9.04 supports automatic configuration, but it conflicts with manual device entries for `wacom` tablets in `/etc/X11/xorg.conf`, causing the X server to crash either on startup or shutdown. Please comment out or remove the entries from `xorg.conf` to get rid of the crashes. (Bug:358643)
 
 
 (9-04-kubuntu-network-management-applet-does-not-connect-to-wpa2-networks)=
 ### Kubuntu Network Management applet does not connect to WPA2 networks
 
-The Network Management applet in Kubuntu is unable to connect to WPA 2 networks and some VPN setups.  You can use knetworkmanager (available on the DVD) or network-manager-gnome as a workaround. (Bug:339313)
+The Network Management applet in Kubuntu is unable to connect to WPA 2 networks and some VPN setups.  You can use `knetworkmanager` (available on the DVD) or network-manager-gnome as a workaround. (Bug:339313)
 
 
 (9-04-kubuntu-may-keep-unneeded-guidance-power-package)=
@@ -236,7 +236,7 @@ If you choose to upgrade your `/` or `/boot` filesystem in place from ext2 or ex
 (9-04-possible-data-loss-problems-resizing-ext4)=
 ### Possible data-loss problems resizing ext4
 
-The resize2fs tool may cause data loss when growing or shrinking ext4 filesystems off-line. See [this mail from the upstream maintainer](http://article.gmane.org/gmane.comp.file-systems.ext4/12763) for more details. Unfortunately we became aware of this too late to fix it in Ubuntu 9.04. If you wish to resize an ext4 filesystem using the tools in Ubuntu 9.04, you may be able to work around these problems by first disabling the `flex_bg` and `uninit_bg` features (do not attempt this on a mounted filesystem!):
+The resize2fs tool may cause data loss when growing or shrinking ext4 filesystems off-line. See this mail from the upstream maintainer `http://article.gmane.org/gmane.comp.file-systems.ext4/12763` for more details. Unfortunately we became aware of this too late to fix it in Ubuntu 9.04. If you wish to resize an ext4 filesystem using the tools in Ubuntu 9.04, you may be able to work around these problems by first disabling the `flex_bg` and `uninit_bg` features (do not attempt this on a mounted filesystem!):
 
 ```none
 tune2fs -O ^flex_bg,^uninit_bg /dev/DEVICE_NAME
@@ -257,7 +257,7 @@ sudo apt-get purge pulseaudio
 
 
 (9-04-apparmor-profiles-incompatible-with-ecryptfs)=
-### Apparmor profiles incompatible with ecryptfs
+### Apparmor profiles incompatible with `ecryptfs`
 
 When using encrypted directories together with apparmor in enforcing mode, apparmor will deny access to certain files unexpectedly because the Linux kernel sees the process as accessing the file via both the unencrypted and encrypted paths (Bug:359338).  As a workaround, users can modify their apparmor profiles under `/etc/apparmor.d/` to grant permissions to
 
@@ -269,9 +269,9 @@ When using encrypted directories together with apparmor in enforcing mode, appar
 
 
 (9-04-avahi-will-not-start-if-a-local-domain-is-present)=
-### Avahi will not start if a .local domain is present
+### `Avahi` will not start if a .local domain is present
 
-The `avahi-daemon` package, which implements the mDNS "zeroconf" standard, includes a check to avoid running when a conflicting `.local` DNS domain is present.  It is reported that some ISPs advertise such a `.local` domain on their networks, which will leave Ubuntu 9.04 hosts unable to see names advertised on the local network (Bug:327362).
+The `avahi-daemon` package, which implements the mDNS `zeroconf` standard, includes a check to avoid running when a conflicting `.local` DNS domain is present.  It is reported that some ISPs advertise such a `.local` domain on their networks, which will leave Ubuntu 9.04 hosts unable to see names advertised on the local network (Bug:327362).
 
 To force the use of mDNS on a network configured this way, users can run the commands:
 
@@ -288,7 +288,7 @@ If there is a pre-existing directory called "ubuntu" in the target drive, it wil
 
 
 (9-04-occasional-hangs-possible-on-arm-architecture)=
-### Occasional hangs possible on ARM architecture
+### Occasional freezes possible on ARM architecture
 
 The ARM port currently does not support the ppoll() & pselect() system syscalls, which will sometimes cause a failure to mount the root filesystem on boot. This is a race condition, and retrying the boot will usually clear the problem. The work to add the syscalls is currently underway and will be delivered as an update to the Ubuntu 9.04 kernel some time after release.
 
@@ -296,7 +296,7 @@ The ARM port currently does not support the ppoll() & pselect() system syscalls,
 (9-04-problems-displaying-text-in-mythbuntu-with-radeon-driver)=
 ### Problems displaying text in Mythbuntu with Radeon driver
 
-The mythtv frontend in mythbuntu fails to render fonts correctly when using the radeon driver and DRI is enabled (Bug:341898).  This issue is expected to be resolved in a post-release update soon after release.  In the meantime, users can work around this problem by disabling DRI in their X configuration.
+The `mythtv` frontend in `mythbuntu` fails to render fonts correctly when using the radeon driver and DRI is enabled (Bug:341898).  This issue is expected to be resolved in a post-release update soon after release.  In the meantime, users can work around this problem by disabling DRI in their X configuration.
 
 
 (9-04-tracker-index-corruption)=
@@ -332,6 +332,6 @@ sudo update-initramfs -u
 
 
 (9-04-amarok-will-not-offer-to-download-additional-codecs-when-running-kubuntu-from-the-live-cd)=
-### Amarok will not offer to download additional codecs when running Kubuntu from the live CD
+### `Amarok` will not offer to download additional codecs when running Kubuntu from the live CD
 
-When started from the live session, Amarok will not offer to download additional media codecs when needed, so, for example, it will be unable to play MP3 files. This will work normally after the system is installed to the hard disk. (Bug:362538)
+When started from the live session, `Amarok` will not offer to download additional media codecs when needed, so, for example, it will be unable to play MP3 files. This will work normally after the system is installed to the hard disk. (Bug:362538)

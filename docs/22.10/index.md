@@ -23,7 +23,7 @@ Ubuntu 22.10 will be supported for 9 months until July 2023. If you need Long Te
 
 Ubuntu 22.10 is shipped with the new 5.19 Linux kernel that brings the following (most relevant) features (in addition to many other new features, new drivers, improvements and fixes):
 
-* The new `futex_waitv()` syscall that can speed up games by letting them wait for multiple futexes with a single system call.
+* The new `futex_waitv()` syscall that can speed up games by letting them wait for multiple `futexes` with a single system call.
 * Support in the task scheduler for CPU clusters that share L2/L3 cache (spreading tasks between clusters will bring more memory bandwidth and decrease cache contention).
 * Support for Intel® AMX (Advanced Matrix Extensions) instructions.
 * CO-RE support that makes compiled BPF programs more portable.
@@ -37,9 +37,9 @@ The init system was updated to systemd v251.4. Please refer to the upstream [cha
 
 ## Toolchain Upgrades 🛠️
 
-### debuginfod support
+### `debuginfod` support
 
-Following the recent [announcement](https://lists.ubuntu.com/archives/ubuntu-devel-announce/2022-September/001320.html) of our [debuginfod instance](https://debuginfod.ubuntu.com), Ubuntu now automatically requests debug symbols from the service when GDB (or any other debuginfo-consuming application) is used.  Please refer to the [Ubuntu Server Guide on debuginfod](https://discourse.ubuntu.com/t/service-debuginfod/30534/10) for more information.
+Following the recent [announcement](https://lists.ubuntu.com/archives/ubuntu-devel-announce/2022-September/001320.html) of our [`debuginfod` instance](https://debuginfod.ubuntu.com), Ubuntu now automatically requests debug symbols from the service when GDB (or any other debuginfo-consuming application) is used.  Please refer to the [Ubuntu Server Guide on `debuginfod`](https://discourse.ubuntu.com/t/service-debuginfod/30534/10) for more information.
 
 ## Security Improvements 🔒
 
@@ -51,7 +51,7 @@ Following the recent [announcement](https://lists.ubuntu.com/archives/ubuntu-dev
 
 ## Ubuntu Desktop
 - The default audio server is now PipeWire instead of PulseAudio
-- The default image apps now suport the _.webp_ format
+- The default image apps now support the _.webp_ format
 
 ### GNOME 👣
 - GNOME has been updated to include new features and fixes from the latest GNOME release, [GNOME 43](https://release.gnome.org/43/)
@@ -101,7 +101,7 @@ When using GSSAPI/GSS-SPNEGO authentication over an encrypted transport like `ld
 
 ### Bind9
 
-* Add support for remote TLS certificate verification, both to [`named`](https://bind9.readthedocs.io/en/v9_18_7/manpages.html#std-iscman-named) and [`dig`](https://bind9.readthedocs.io/en/v9_18_7/manpages.html#std-iscman-dig), making it possible to implement Strict and Mutual TLS authentication, as described in [**RFC 9103**](https://datatracker.ietf.org/doc/html/rfc9103.html), Section 9.3.
+* Add support for remote TLS certificate verification, both to `named` `https://bind9.readthedocs.io/en/v9_18_7/manpages.html#std-iscman-named` and [`dig`](https://bind9.readthedocs.io/en/v9_18_7/manpages.html#std-iscman-dig), making it possible to implement Strict and Mutual TLS authentication, as described in [**RFC 9103**](https://datatracker.ietf.org/doc/html/rfc9103.html), Section 9.3.
 
 ### Rsync
 
@@ -116,7 +116,7 @@ When using GSSAPI/GSS-SPNEGO authentication over an encrypted transport like `ld
 Improvements in many agents such as:
 
 - IPaddr2: allow to disable Duplicate Address Detection for IPv6; and allow to send IPv6 Neighbor Advertisements in background.
-- LVM-activate: disable VG autoactivation in `system_id access_mode`.
+- LVM-activate: disable VG `autoactivation` in `system_id access_mode`.
 
 Those are some of the changes added to the resource-agent-base binary package which is in main, to check a full list of the changes see the [upstream changelog](https://github.com/ClusterLabs/resource-agents/blob/main/ChangeLog#L2-L136).
 
@@ -140,7 +140,7 @@ This new version contains an important CVE fix and also a bunch of improvements,
 
 ### Docker.io 20.10.16
 
-This new version contains fixes to avoid potential lock issues and update its dependencies internally. For more detailed information please check the [upstream changelog](https://docs.docker.com/release-notes/).
+This new version contains fixes to avoid potential lock issues and update its dependencies internally. For more detailed information please check the upstream changelog `https://docs.docker.com/release-notes/`.
 
 #### qemu
 
@@ -176,7 +176,7 @@ The new version 3.0.0 of openvswitch is in Ubuntu 22.10 and provides a general u
  * IPsec now has custom per-tunnel options.
  * Extended Flow Monitoring to support more OpenFlow versions.
  * OVSDB compaction was improved to run in a separate process (avoiding blocks) and is enabled by default to return unused memory to the system.
- * libopenvswitch API changes to fix the undefined compiler behavior will need users of libopenvswitch to double-check the use of loop macros like `LIST_FOR_EACH`.
+ * `libopenvswitch` API changes to fix the undefined compiler behavior will need users of `libopenvswitch` to double-check the use of loop macros like `LIST_FOR_EACH`.
  * [The OVS News](https://www.openvswitch.org/releases/NEWS-3.0.0.txt) page holds more details about the new version.
 
 
@@ -216,13 +216,13 @@ Make sure you read the [OpenStack Charm Release Notes](https://docs.openstack.or
 
 ### Raspberry Pi 🍓
 
-* Ubuntu 22.10 includes support for several "embedded" displays on the Raspberry Pi, under both server and desktop configurations. Supported displays include the [official DSI display](https://www.raspberrypi.com/products/raspberry-pi-touch-display/) (though, see Known Issues below), the [Hyperpixel](https://github.com/pimoroni/hyperpixel4) and the range of [Inky displays](https://github.com/pimoroni/inky) ([bug 1992778](https://launchpad.net/bugs/1992778)). See [this post](https://waldorf.waveform.org.uk/2022/hyping-pixels.html) for full details on the Hyperpixel.
+* Ubuntu 22.10 includes support for several "embedded" displays on the Raspberry Pi, under both server and desktop configurations. Supported displays include the official DSI display `https://www.raspberrypi.com/products/raspberry-pi-touch-display/` (though, see Known Issues below), the [Hyperpixel](https://github.com/pimoroni/hyperpixel4) and the range of [Inky displays](https://github.com/pimoroni/inky) ([bug 1992778](https://launchpad.net/bugs/1992778)). See [this post](https://waldorf.waveform.org.uk/2022/hyping-pixels.html) for full details on the Hyperpixel.
 
-* Ubuntu 22.10 builds on existing support for the [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) by adding the [mpremote](https://pypi.org/project/mpremote/) utility to the archive ([bug 1992777](https://launchpad.net/bugs/1992777)), permitting easier development with [MicroPython](https://docs.micropython.org/en/latest/) environments with facilities including the ability to mount local directories on your attached MicroPython device.
+* Ubuntu 22.10 builds on existing support for the Raspberry Pi Pico `https://www.raspberrypi.com/products/raspberry-pi-pico/` by adding the [`mpremote`](https://pypi.org/project/mpremote/) utility to the archive ([bug 1992777](https://launchpad.net/bugs/1992777)), permitting easier development with [MicroPython](https://docs.micropython.org/en/latest/) environments with facilities including the ability to mount local directories on your attached MicroPython device.
 
-* The 5.19 kernel in Ubuntu 22.10 disables the (long deprecated) [GPIO sysfs interface](https://docs.kernel.org/admin-guide/gpio/sysfs.html) ([bug 1918583](https://bugs.launchpad.net/bugs/1918583)). This means that several common GPIO libraries (including [RPi.GPIO](https://pypi.org/project/RPi.GPIO/)) cannot operate. A shim providing [compatibility with RPi.GPIO](https://rpi-lgpio.readthedocs.io/en/latest/) has been created and is available in Kinetic in the `python3-rpi-lgpio` package. See [this post](https://waldorf.waveform.org.uk/2022/the-one-where-dave-breaks-stuff.html) for full details.
+* The 5.19 kernel in Ubuntu 22.10 disables the (long deprecated) GPIO sysfs interface `https://docs.kernel.org/admin-guide/gpio/sysfs.html` ([bug 1918583](https://bugs.launchpad.net/bugs/1918583)). This means that several common GPIO libraries (including [RPi.GPIO](https://pypi.org/project/RPi.GPIO/)) cannot operate. A shim providing [compatibility with RPi.GPIO](https://rpi-lgpio.readthedocs.io/en/latest/) has been created and is available in Kinetic in the `python3-rpi-lgpio` package. See [this post](https://waldorf.waveform.org.uk/2022/the-one-where-dave-breaks-stuff.html) for full details.
 
-* The webkit component in Gnome now works ([bug 1924251](https://bugs.launchpad.net/bugs/1924251)) with the result that the offline Help application, and Online Accounts settings now operate correctly.
+* The `webkit` component in Gnome now works ([bug 1924251](https://bugs.launchpad.net/bugs/1924251)) with the result that the offline Help application, and Online Accounts settings now operate correctly.
 
 * The `raspi-config` utility has been updated to partially work in Ubuntu ([bug 1972982](https://launchpad.net/bugs/1972982)). Some facilities (e.g. RealVNC support) do not work, but now correctly report they are not supported. Other facilities (e.g. overlayfs) work correctly.
 
@@ -242,13 +242,13 @@ IBM Z and LinuxONE / s390x-specific enhancements since 22.04 (partially not limi
 
 * And further dump enhancements with the NVMe stand-alone dump support ([bug 1929033](https://bugs.launchpad.net/bugs/1929033)).
 
-* Support for latest hardware with adding IBM z16 Processor-Activity-Instrumentation Facility support (([bug 1982384](https://bugs.launchpad.net/bugs/1982384)) and ([bug 1982384](https://bugs.launchpad.net/bugs/1982384))), additional CPU-MF counters for new hardware for libpfm ([bug 1960118](https://bugs.launchpad.net/bugs/1960118)) and support for the latest IBM zSystems hardware generations in qclib ([bug 1982332](https://bugs.launchpad.net/bugs/1982332)).
+* Support for latest hardware with adding IBM z16 Processor-Activity-Instrumentation Facility support (([bug 1982384](https://bugs.launchpad.net/bugs/1982384)) and ([bug 1982384](https://bugs.launchpad.net/bugs/1982384))), additional CPU-MF counters for new hardware for `libpfm` ([bug 1960118](https://bugs.launchpad.net/bugs/1960118)) and support for the latest IBM zSystems hardware generations in qclib ([bug 1982332](https://bugs.launchpad.net/bugs/1982332)).
 
 * On top of the updated virtualization stack (see above), further virtualization improvements with crypto passthrough hotplug ([bug 1852741](https://bugs.launchpad.net/bugs/1852741)) and a new tool to persistently configure vfio-ap devices ([bug 1852736](https://bugs.launchpad.net/bugs/1852736)) landed.
 
 * A multitude of enhancements in the area of cryptography, like the update of opencryptoki to version 3.18, with support for crypto profiles ([bug 1959549](https://bugs.launchpad.net/bugs/1959549)), additional crypto counters ([bug 1959551](https://bugs.launchpad.net/bugs/1959551)) and the PKCS #11 3.1 CKA_DERIVE_TEMPLATEs ([bug 1982842](https://bugs.launchpad.net/bugs/1982842)).
 libica was updated to the latest bug fix version 4.0.3 ([bug 1986437](https://bugs.launchpad.net/bugs/1986437)), the openssl-ibmca package to 2.3.0, now with support for openSSL 3.0 provider ([bug 1959763](https://bugs.launchpad.net/bugs/1959763)), support for IBM specific mechanisms and attributes was added to p11-kit ([bug 1982841](https://bugs.launchpad.net/bugs/1982841)), BEAR enhancements for new IBM Z hardware ([bug 1960186](https://bugs.launchpad.net/bugs/1960186)) and (lib)nettle upgrade to latest upstream version, that now provides CPACF support ([bug 1959469](https://bugs.launchpad.net/bugs/1959469)).
-In addition zcryptctl comes now with support for control domains (([bug 1982759](https://bugs.launchpad.net/bugs/1982759)) and ([bug 1982838](https://bugs.launchpad.net/bugs/1982838))) and a new tool is shipped that allows to display usage counters from the IBM z16 Processor Activity Instrumentation Facility ([bug 1982760](https://bugs.launchpad.net/bugs/1982760)).
+In addition `zcryptctl` comes now with support for control domains (([bug 1982759](https://bugs.launchpad.net/bugs/1982759)) and ([bug 1982838](https://bugs.launchpad.net/bugs/1982838))) and a new tool is shipped that allows to display usage counters from the IBM z16 Processor Activity Instrumentation Facility ([bug 1982760](https://bugs.launchpad.net/bugs/1982760)).
 
 * Eventually improvements in the area of RDMA/RoCE, with support for independent usage of secondary physical function (PF) of ConnectX-5/6 based RoCE adapters ([bug 1959542](https://bugs.launchpad.net/bugs/1959542)) was added and the enablement for MIO instructions, means usage of new PCI Load/Store instructions in rdma-core (([bug 1959543](https://bugs.launchpad.net/bugs/1959543)) and ([bug 1959544](https://bugs.launchpad.net/bugs/1959544))).
 
@@ -286,7 +286,7 @@ None
 
 * Various kernel modules have been moved from the `linux-modules-raspi` package in order to reduce the initramfs size. If you find an application failing due to missing kernel modules, please try `sudo apt install linux-modules-extra-raspi`
 
-* The legacy camera stack (MMAL based) is no longer supported on arm64; [libcamera](https://www.raspberrypi.com/documentation/accessories/camera.html#libcamera-and-libcamera-apps) is the supported method of using the Pi Camera Module on the arm64 architecture (the boot-time configuration will automatically load overlays for official modules; unofficial camera modules need the relevant overlay added to `config.txt` on the boot partition)
+* The legacy camera stack (MMAL based) is no longer supported on arm64; libcamera `https://www.raspberrypi.com/documentation/accessories/camera.html#libcamera-and-libcamera-apps` is the supported method of using the Pi Camera Module on the arm64 architecture (the boot-time configuration will automatically load overlays for official modules; unofficial camera modules need the relevant overlay added to `config.txt` on the boot partition)
 
 * After initial user setup on the desktop image, several packages can still be autoremoved [bug 1925265](https://launchpad.net/bugs/1925265)); run `sudo apt autoremove --purge` to work around this
 
@@ -306,10 +306,10 @@ Nothing yet.
 
 The release notes for the official flavours can be found at the following links:
 
-  * [Kubuntu Release Notes](https://kubuntu.org/news/kubuntu-22-10-kinetic-kudu-released/)
+  * Kubuntu Release Notes `https://kubuntu.org/news/kubuntu-22-10-kinetic-kudu-released/`
   * [Lubuntu Release Notes](https://lubuntu.me/kinetic-released/)
   * [Ubuntu Budgie Release Notes](https://ubuntubudgie.org/2022/09/ubuntu-budgie-22-10-release-notes/)
   * [Ubuntu MATE Release Notes](https://ubuntu-mate.org/blog/ubuntu-mate-kinetic-kudu-release-notes/)
   * [Ubuntu Studio Release Notes](https://ubuntustudio.org/ubuntu-studio-22-10-release-notes/)
-  * [Ubuntu Unity Release Notes](https://ubuntuunity.org/blog/ubuntu-unity-22.10/)
+  * Ubuntu Unity Release Notes `https://ubuntuunity.org/blog/ubuntu-unity-22.10/`
   * [Xubuntu Release Notes](https://wiki.xubuntu.org/releases/22.10/release-notes)

@@ -282,6 +282,8 @@ linkcheck_ignore = [
     r"https://docs\.kernel\.org/admin-guide/gpio/sysfs\.html",
     r"https://kubuntu\.org/news/.*",
     r"https://ubuntuunity\.org/blog/.*",
+    # 8.04 release notes: archive.canonical.com times out from CI
+    r"https?://archive\.canonical\.com/.*",
 ]
 
 

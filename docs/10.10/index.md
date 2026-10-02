@@ -107,7 +107,7 @@ For more information see the Kubuntu release page `http://www.kubuntu.org/news/1
 
 [Xfce4](http://www.xfce.org/) was updated to the current [4.6.2 release](http://www.xfce.org/documentation/changelogs/4.6.2?PHPSESSID=01a9340c291d5153df6ecade0e0ce0ad). This fixes many of the bugs and updates the programs used in Xubuntu.
 
-New default applications: Parole (Xfce4 Media Player) replaced Totem Movie Player, `Xfburn` (Xfce4 CD/DVD burning tool) replaced `Brassero`, and xfce4-taskmanager (Xfce4 process manager) replaced Gnome-Task-Manager. See the [Xubuntu release notes](https://wiki.ubuntu.com/Xubuntu/MaverickMeerkat).
+New default applications: Parole (Xfce4 Media Player) replaced Totem Movie Player, `Xfburn` (Xfce4 CD/DVD burning tool) replaced `Brasero`, and xfce4-taskmanager (Xfce4 process manager) replaced Gnome-Task-Manager. See the [Xubuntu release notes](https://wiki.ubuntu.com/Xubuntu/MaverickMeerkat).
 
 
 (10-10-edubuntu)=

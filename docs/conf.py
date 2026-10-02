@@ -251,6 +251,8 @@ linkcheck_ignore = [
     r"https://www.monitoring-plugins\.org/news/.*",
     r"https://kernelnewbies\.org/.*",
     r"https://cairographics\.org/news/.*",
+    # Old apt repository host unreachable from CI (historical release notes)
+    r"http://archive\.canonical\.com/.*",
     # 22.10 release notes: dead (404) and bot-challenged (403) external links
     r"https://bind9\.readthedocs\.io/en/v9_18_7/manpages\.html.*",
     r"https://docs\.docker\.com/release-notes/.*",

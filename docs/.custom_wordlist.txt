@@ -1252,3 +1252,9 @@ Zstack
 Zstd
 zstd
 Hyperpixel
+maintainer's
+ISPs
+Wubi
+Moblin
+Ralink
+wacom

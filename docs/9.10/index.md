@@ -21,7 +21,7 @@ Systems with less memory may be able to select "Install Ubuntu" from the boot me
 (release-notes-for-ubuntu-9-10-for-arm)=
 ## Release notes for Ubuntu 9.10 for ARM
 
-A separate page has been made available with release notes for the developer-oriented Ubuntu 9.10 armel port.  Please see [wiki.ubuntu.com/ARM/KarmicReleaseNotes](https://wiki.ubuntu.com/ARM/KarmicReleaseNotes) for information about issues impacting installation on ARM.
+A separate page has been made available with release notes for the developer-oriented Ubuntu 9.10 `armel` port.  Please see [wiki.ubuntu.com/ARM/KarmicReleaseNotes](https://wiki.ubuntu.com/ARM/KarmicReleaseNotes) for information about issues impacting installation on ARM.
 
 
 (9-10-installation)=
@@ -51,7 +51,7 @@ The "Hardware Drivers" tool (Jockey) requires up to date package lists before it
 (other-os-options-not-shown-in-boot-menu-when-installing-with-ubuntu-9-10-rc)=
 ### Other OS options not shown in boot menu when installing with Ubuntu 9.10 RC
 
-After installation from the Ubuntu 9.10 Release Candidate, other installed operating systems are not correctly displayed in the boot menu.  To correct this, users should run `sudo update-grub` from the commandline after rebooting to their installed Ubuntu system.  This problem does not occur for installations from the final Ubuntu 9.10 release. (Bug:456776)
+After installation from the Ubuntu 9.10 Release Candidate, other installed operating systems are not correctly displayed in the boot menu.  To correct this, users should run `sudo update-grub` from the command line after rebooting to their installed Ubuntu system.  This problem does not occur for installations from the final Ubuntu 9.10 release. (Bug:456776)
 
 
 (9-10-automatic-boot-from-a-degraded-raid-array-not-configured-upon-installation)=
@@ -100,15 +100,15 @@ issue will be provided in a post-release update immediately after the Ubuntu
 
 Dmraid "fake raid" devices are supported out-of-the-box on the Ubuntu 9.10 Desktop CD, and are detected and activated by dmraid on boot. Ubiquity will offer to install on the RAID array, and not on the RAID members.
 
-The automatic activation of dmraid can be disabled with the "nodmraid" boot option, available by pressing F6 in the CD boot menu. This can be useful for setups which have fakeraid metadata present on the disks, but where dmraid activation would be undesired or cause problems.
+The automatic activation of dmraid can be disabled with the `nodmraid` boot option, available by pressing F6 in the CD boot menu. This can be useful for setups which have `fakeraid` metadata present on the disks, but where dmraid activation would be undesired or cause problems.
 
 
 (9-10-upgrading)=
 ## Upgrading
 
-Users of Ubuntu 9.04 can upgrade to Ubuntu 9.10 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 9.04 first, and then to 9.10. Complete instructions may be found at [www.ubuntu.com/getubuntu/upgrading](http://www.ubuntu.com/getubuntu/upgrading).
+Users of Ubuntu 9.04 can upgrade to Ubuntu 9.10 by a convenient automated process. Users of older Ubuntu releases need to upgrade to Ubuntu 9.04 first, and then to 9.10. Complete instructions may be found at `www.ubuntu.com/getubuntu/upgrading`.
 
-Kubuntu users can upgrade directly from Kubuntu 8.04 to Kubuntu 9.10.  Users upgrading in this way are advised to also read the [release notes for Ubuntu 8.10](http://www.ubuntu.com/getubuntu/releasenotes/810) and [for Ubuntu 9.04](http://www.ubuntu.com/getubuntu/releasenotes/904), as the issues described there will in most cases also apply.
+Kubuntu users can upgrade directly from Kubuntu 8.04 to Kubuntu 9.10.  Users upgrading in this way are advised to also read the release notes for Ubuntu 8.10 `http://www.ubuntu.com/getubuntu/releasenotes/810` and for Ubuntu 9.04 `http://www.ubuntu.com/getubuntu/releasenotes/904`, as the issues described there will in most cases also apply.
 
 
 (9-10-grub-menu-lst-install-the-maintainers-version-vs-keep-the-local-version)=
@@ -138,7 +138,7 @@ or below the line
 
 ```
 
-* Save the file, and run `sudo update-grub` from the commandline.
+* Save the file, and run `sudo update-grub` from the command line.
 * Choose "install the package maintainer's version".
 
 For example, if you added an option `i915.modeset=0` to the "kernel" line:
@@ -202,7 +202,7 @@ The kubuntu upgrade may leave the no longer needed packages "kde-guidance-powerm
 (9-10-ctrl-alt-backspace-disabled-by-default-in-xorg-configured-via-xkb)=
 ### Ctrl-Alt-Backspace disabled by default in Xorg, configured via XKB
 
-Since Ubuntu 9.04, the Ctrl-Alt-Backspace key combination to force a restart of X is now disabled by default, to eliminate the problem of accidentally triggering the key combination.  In addition, the Ctrl-Alt-Backspace option is now configured as an X keymap (XKB) option, replacing the X server "DontZap" option and allowing per-user configuration of this setting.
+Since Ubuntu 9.04, the Ctrl-Alt-Backspace key combination to force a restart of X is now disabled by default, to eliminate the problem of accidentally triggering the key combination.  In addition, the Ctrl-Alt-Backspace option is now configured as an X `keymap` (XKB) option, replacing the X server "DontZap" option and allowing per-user configuration of this setting.
 
 As a result, enabling or disabling the Ctrl+Alt+Backspace shortcut can now be done easily from the desktop.
 
@@ -315,15 +315,15 @@ Users who prefer the previous behavior of waiting for all filesystems to be moun
 
 
 (9-10-optional-encrypted-partitions-must-be-marked-bootwait-in-etc-fstab)=
-### Optional encrypted partitions must be marked bootwait in /etc/fstab
+### Optional encrypted partitions must be marked `bootwait` in /etc/fstab
 
-In addition to the above, users who have configured any encrypted partitions in `/etc/crypttab` to start at boot time (i.e., not using the `noauto` option) should make sure that the filesystems on these volumes are listed in `/etc/fstab` if they are not mounted at a standard system mountpoint.  Failure to do this on a desktop system will lead to problems from the X server and `cryptsetup` trying to control the console at the same time.  At best, this will prevent the user from seeing the passphrase prompt; at worst it will also cause the X server to spin and consume 100% CPU. (Bug:430496)
+In addition to the above, users who have configured any encrypted partitions in `/etc/crypttab` to start at boot time (i.e., not using the `noauto` option) should make sure that the filesystems on these volumes are listed in `/etc/fstab` if they are not mounted at a standard system `mountpoint`.  Failure to do this on a desktop system will lead to problems from the X server and `cryptsetup` trying to control the console at the same time.  At best, this will prevent the user from seeing the passphrase prompt; at worst it will also cause the X server to spin and consume 100% CPU. (Bug:430496)
 
 
 (9-10-avahi-will-always-start-even-if-a-local-domain-is-present)=
-### Avahi will always start even if a .local domain is present
+### `Avahi` will always start even if a .local domain is present
 
-The `avahi-daemon` package, which implements the mDNS "zeroconf" standard, formerly included a check to avoid running when a conflicting `.local` DNS domain is present, as it was reported that some ISPs advertise such a `.local` domain on their networks, leaving Ubuntu hosts unable to see names advertised on the local network (Bug:327362).  In Ubuntu 9.10, `avahi-daemon` is started regardless.
+The `avahi-daemon` package, which implements the mDNS `zeroconf` standard, formerly included a check to avoid running when a conflicting `.local` DNS domain is present, as it was reported that some ISPs advertise such a `.local` domain on their networks, leaving Ubuntu hosts unable to see names advertised on the local network (Bug:327362).  In Ubuntu 9.10, `avahi-daemon` is started regardless.
 
 It is possible that this may cause other problems.  If your network is configured this way, you can disable mDNS using the following command:
 
@@ -336,7 +336,7 @@ sudo sed -e '/^start/,+1s/^/#/' /etc/init/avahi-daemon.conf
 (9-10-disabling-ralink-rt2860-wifi-on-eeepc-with-fn-f2-hotkey-causes-a-kernel-crash)=
 ### Disabling Ralink rt2860 wifi on EeePC with Fn+F2 hotkey causes a kernel crash
 
-Using the Fn+F2 hotkey to disable the wireless antenna on an EeePC that uses a Ralink rt2860 chip (EeePC 900 and 1000 series) results in a kernel panic that will hang the system.  A fix for this issue is expected to be provided in a post-release update immediately after the Ubuntu 9.10 release. (Bug:404626)
+Using the Fn+F2 hotkey to disable the wireless antenna on an EeePC that uses a Ralink rt2860 chip (EeePC 900 and 1000 series) results in a kernel panic that will freeze the system.  A fix for this issue is expected to be provided in a post-release update immediately after the Ubuntu 9.10 release. (Bug:404626)
 
 
 (9-10-bison-webcam-in-msi-wind-netbook-causes-usb-errors-if-not-disabled)=
@@ -360,13 +360,13 @@ A bug in the kernel-mode-setting (KMS) brightness handling on certain MSI Wind n
 (9-10-kubuntu-gui-package-manager-does-not-warn-about-installing-from-unsigned-package-repositories)=
 ### Kubuntu GUI package manager does not warn about installing from unsigned package repositories
 
-The `kpackagekit` package manager used in Kubuntu 9.10 does not notify users if the packages they are installing come from repositories that are not secured with PGP.  Users who have unsigned package repositories in their `/etc/apt/sources.list` configuration and wish to be informed of any packages installed from these sources should use the `apt-get` commandline tool as a workaround. (Bug:256245)
+The `kpackagekit` package manager used in Kubuntu 9.10 does not notify users if the packages they are installing come from repositories that are not secured with PGP.  Users who have unsigned package repositories in their `/etc/apt/sources.list` configuration and wish to be informed of any packages installed from these sources should use the `apt-get` command line tool as a workaround. (Bug:256245)
 
 
 (9-10-amarok-will-not-offer-to-download-additional-codecs-when-running-kubuntu-from-the-live-cd)=
-### Amarok will not offer to download additional codecs when running Kubuntu from the live CD
+### `Amarok` will not offer to download additional codecs when running Kubuntu from the live CD
 
-When started from the live session, Amarok will not offer to download additional media codecs when needed, so, for example, it will be unable to play MP3 files. This will work normally after the system is installed to the hard disk. (Bug:362538)
+When started from the live session, `Amarok` will not offer to download additional media codecs when needed, so, for example, it will be unable to play MP3 files. This will work normally after the system is installed to the hard disk. (Bug:362538)
 
 
 (9-10-evince-pdf-viewer-does-not-work-for-nonstandard-home-directories)=
@@ -421,15 +421,15 @@ After upgrading a Samba domain controller to Ubuntu 9.10, Windows 7 domain membe
 
 
 (9-10-samba-nmbd-daemon-not-started-during-boot)=
-### Samba nmbd daemon not started during boot
+### Samba `nmbd` daemon not started during boot
 
 On an Ubuntu 9.10 system with Samba installed, the `nmbd` daemon may fail to start on boot.  To workaround this problem, restart the samba service once the system has finished booting by running `sudo service samba restart`. A fix for this issue will be provided in a post-release update. (Bug:462169)
 
 
 (sparc-not-supported-by-ubuntu-9-10)=
-### Sparc not supported by Ubuntu 9.10
+### `Sparc` not supported by Ubuntu 9.10
 
-The upstart init system in Ubuntu 9.10 fails to work on the sparc architecture due to an undiagnosed SIGBUS error.  Users of Ubuntu on sparc are advised to remain on Ubuntu 9.04 instead of upgrading to 9.10.  Assistance in resolving this architecture-specific bug for Ubuntu 10.04 is welcome. (Bug:436758)
+The upstart init system in Ubuntu 9.10 fails to work on the `sparc` architecture due to an undiagnosed SIGBUS error.  Users of Ubuntu on `sparc` are advised to remain on Ubuntu 9.04 instead of upgrading to 9.10.  Assistance in resolving this architecture-specific bug for Ubuntu 10.04 is welcome. (Bug:436758)
 
 
 (9-10-window-corruption-with-older-ati-graphics-cards)=

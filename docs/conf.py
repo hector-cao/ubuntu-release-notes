@@ -253,6 +253,8 @@ linkcheck_ignore = [
     r"https://cairographics\.org/news/.*",
     # 20.04 release notes: bot-challenged links (kept live)
     r"https?://help\.ubuntu\.com/.*",
+    r"https://en\.wikipedia\.org/.*",
+    r"http://connectivity-check\.ubuntu\.com/",
     r"https?://www\.bluez\.org/.*",
     # Old apt repository host unreachable from CI (historical release notes)
     r"http://archive\.canonical\.com/.*",

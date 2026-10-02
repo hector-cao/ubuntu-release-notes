@@ -62,6 +62,7 @@ authctl
 authd
 authmethods
 authPrompt
+Autocad
 autoconnect
 autodetection
 autofs
@@ -100,6 +101,7 @@ bashisms
 Battlemage
 Baz
 bcmwl
+Beagleboards
 bedtools
 Beldum
 Bergmite
@@ -235,6 +237,7 @@ Darko
 Darra
 Darsha
 datapath
+Datasafe
 datasource
 datasources
 datastore
@@ -341,6 +344,7 @@ fixups
 flashable
 flatpak
 flatpanel's
+Fluendo
 fonts
 forcemirror
 forkserver
@@ -448,6 +452,7 @@ IDEs
 idmapped
 igc
 Ilya
+iMacs
 imager
 imap
 imc
@@ -594,6 +599,7 @@ lockscreen
 logind
 logrotate
 logspam
+LOM's
 lookups
 losetup
 lowlatency
@@ -614,6 +620,8 @@ Lubuntu
 Luca
 Lunarlake
 LUNs
+Maag
+Macbooks
 machinectl
 MACs
 maintainer's
@@ -677,6 +685,7 @@ multipathd
 multiprecision
 multiqueue
 multiranges
+multitouch
 munin
 Murano
 mypy
@@ -774,6 +783,7 @@ Percona
 perdir
 Perf
 pgsql
+Photoshop
 Pico
 pid
 pids
@@ -918,6 +928,7 @@ Sami
 sandboxed
 Sandboxed
 sandboxing
+Sandybridge
 sanitization
 sboms
 sbsigntool
@@ -1198,6 +1209,7 @@ VPN
 VPNs
 vsftpd
 vSwitch
+vsync
 Vulkan
 wacom
 Wacom
@@ -1263,6 +1275,7 @@ ZBook
 zcrypt
 zdev
 zenity
+zeroconf
 Zicbop
 zimg
 zipl

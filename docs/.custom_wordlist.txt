@@ -615,6 +615,7 @@ Lunarlake
 LUNs
 machinectl
 MACs
+maintainer's
 makedumpfile
 Makefile
 makeflags
@@ -652,6 +653,7 @@ mkeficapsule
 mknod
 mlocate
 mmap
+Moblin
 modemmanager
 modeset
 Modifed
@@ -845,6 +847,7 @@ rabbitmqctl
 Radeon
 radeonsi
 Rahme
+Ralink
 ramdisk
 RAs
 raspi
@@ -1195,6 +1198,7 @@ VPNs
 vsftpd
 vSwitch
 Vulkan
+wacom
 Wacom
 waitpkg
 wakeup

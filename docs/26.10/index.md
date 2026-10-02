@@ -99,7 +99,7 @@ used by monitoring software to query and manage network devices and hosts.
 #### rdma-core
 
 `rdma-core` provides the userspace components for the Linux RDMA
-(Remote Direct Memory Access) subsystem used to 0configure and use
+(Remote Direct Memory Access) subsystem used to configure and use
 InfiniBand/RoCE/iWARP networking and storage (NVMe-oF, SRP, etc.) devices.
 
 - **mlx5 provider**

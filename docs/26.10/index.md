@@ -152,7 +152,7 @@ and a new SQLite-MySQL migration helper.
 
 - New `dmarc_sqlite_to_mysql` migration script.
 - MySQL: enable SSL for newer MySQL; fixed schema for new imports.
-- `dmarc_receive`: `eval` un(g)zip so imperfect archives no longer interrupt
+- `dmarc_receive`: `eval` `unzip`/`ungzip`, so imperfect archives no longer interrupt
   the processing loop.
 - `dmarc_receive`: support for gzip, zip, and XML report files (#277).
 
